@@ -1,0 +1,40 @@
+name: Sync LinkedIn Posts
+
+on:
+  schedule:
+    # Run once every 24 hours at 06:00 UTC
+    - cron: '0 6 * * *'
+  workflow_dispatch: # Allows manual trigger from GitHub Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  sync-posts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Sync LinkedIn Posts
+        env:
+          LINKEDIN_RSS_URL: ${{ secrets.LINKEDIN_RSS_URL }}
+        run: |
+          python3 .github/scripts/sync_linkedin.py
+
+      - name: Commit and Push Changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/featured_posts.json
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(data): auto-sync latest LinkedIn posts [skip ci]"
+            git push
+          else
+            echo "No new updates in featured_posts.json"
+          fi

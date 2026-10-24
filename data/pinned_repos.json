@@ -1,0 +1,34 @@
+[
+  {
+    "repo": "seating-system",
+    "link": "https://github.com/Adhil-cr/seating-system",
+    "description": "ExamCell – Examination Hall Seating Arrangement Automation System built with Django, PostgreSQL, SQLite, and PyInstaller.",
+    "language": "Python",
+    "languageColor": "#3572A5",
+    "stars": 0
+  },
+  {
+    "repo": "Daily-python",
+    "link": "https://github.com/Adhil-cr/Daily-python",
+    "description": "Comprehensive 9-tier software engineering journey from Python & C memory fundamentals to production backend architecture.",
+    "language": "Python",
+    "languageColor": "#3572A5",
+    "stars": 0
+  },
+  {
+    "repo": "BroComplaint",
+    "link": "https://github.com/Adhil-cr/BroComplaint",
+    "description": "admin account username : admin password : admin123 | student account email : muhammedadhil639@gmail.com password : 123456",
+    "language": "TypeScript",
+    "languageColor": "#3178c6",
+    "stars": 0
+  },
+  {
+    "repo": "E-Commerce-Web",
+    "link": "https://github.com/Adhil-cr/E-Commerce-Web",
+    "description": "Basic E-Commerce Web-Application",
+    "language": "HTML",
+    "languageColor": "#e34c26",
+    "stars": 0
+  }
+]

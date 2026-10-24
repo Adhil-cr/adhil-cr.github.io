@@ -1,0 +1,37 @@
+[
+  {
+    "id": "post-01",
+    "date": "OCT 2026",
+    "readTime": "2 MIN READ",
+    "tag": "SOFTWARE ENGINEERING",
+    "tags": [
+      "BUILD IN PUBLIC",
+      "PYTHON",
+      "DJANGO",
+      "SOFTWARE ENGINEERING"
+    ],
+    "title": "Curiosity to Code: Turning Technical Ideas into Real Products",
+    "content": "I have always been curious about how things work, how ideas become products, and how technology can solve real problems. I'm a developer who loves exploring systems, learning new paradigms, and turning concepts into reality. Developing, exploring, and building production software is just the beginning.",
+    "mediaType": "video",
+    "videoUrl": "assets/videos/curiosity_to_code.mp4",
+    "imageUrl": "https://dms.licdn.com/playlist/vid/v2/D4D05AQH1XpsWVKGFkA/thumbnail-with-play-button-overlay-high/B4DaFDXR4WJUC8-/0/1792131542079?e=2147483647&v=beta&t=Bh2V31g4mU9GHces_2IzYu3t8f9_Ps1-98nTVmir3Ns",
+    "linkedinUrl": "https://lnkd.in/p/d6kz5Kba"
+  },
+  {
+    "id": "post-02",
+    "date": "SEP 2026",
+    "readTime": "2 MIN READ",
+    "tag": "ACHIEVEMENT & AI",
+    "tags": [
+      "BROTOTYPE",
+      "AI",
+      "WEB DEVELOPMENT",
+      "ACHIEVEMENT"
+    ],
+    "title": "Winner: Lovable AI Web App Challenge by Brototype Malayalam",
+    "content": "Selected as one of the 3 winners in the Lovable AI Web App Creation Challenge by Brototype Malayalam. Receiving personal recognition from Nikhil Kilivayil and Jobin Selvanose was a milestone that reinforces my passion for building, shipping, and pushing engineering boundaries.",
+    "mediaType": "image",
+    "imageUrl": "assets/images/lovable_ai_winner.jpg",
+    "linkedinUrl": "https://lnkd.in/p/dTTjNHeD"
+  }
+]

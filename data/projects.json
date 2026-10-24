@@ -1,0 +1,38 @@
+[
+  {
+    "id": "examcell-automation",
+    "title": "EXAMCELL AUTOMATION SYSTEM",
+    "tagline": "High-Integrity Examination Hall & Matrix Seating Engine",
+    "badge": "CAPSTONE ENGINE",
+    "problem": "Manual examination seating across multi-department batches caused frequent subject collisions, underutilized hall capacities, and error-prone paper workflows during institutional examinations.",
+    "solution": "Built an automated matrix seating engine in Django & PostgreSQL that normalizes student enrollments into 1:1 subject records, enforces deterministic anti-cheating distribution, and produces verifiable PDF/Excel seating plans in seconds.",
+    "architectureHighlight": "Matrix Bench Allocation & Constraint Propagation: Models hall benches as discrete coordinate matrices (row × column × seat slot). Implements a dual-tier greedy allocation algorithm enforcing deterministic inter-department interleaving so no two adjacent students share the same exam paper while strictly respecting hall capacity limits.",
+    "techStack": ["Python 3.12", "Django", "PostgreSQL", "Pandas", "ReportLab", "PyInstaller"],
+    "githubUrl": "https://github.com/Adhil-cr/seating-system",
+    "featured": true
+  },
+  {
+    "id": "core-commerce-service",
+    "title": "CORE COMMERCE SERVICE",
+    "tagline": "Transactional Backend Engine with Strict Concurrency & Isolation",
+    "badge": "PRODUCTION BACKEND",
+    "problem": "High-concurrency checkout spikes frequently cause inventory overselling, race conditions between simultaneous shoppers, and orphaned database states when cart sessions drop mid-payment.",
+    "solution": "Engineered a resilient Django commerce backend enforcing ACID database transactions with row-level locks, soft-deletion patterns for audit trails, and strict role-based access control between customer and administrative portals.",
+    "architectureHighlight": "Row-Level Lock Concurrency (SELECT FOR UPDATE): Leverages PostgreSQL row-level locks within atomic transaction blocks during inventory reservation, eliminating race conditions under simultaneous checkout attempts without the operational overhead of an external distributed locking service.",
+    "techStack": ["Python 3.12", "Django REST", "PostgreSQL", "ACID Transactions", "Gunicorn", "WhiteNoise"],
+    "githubUrl": "https://github.com/Adhil-cr/E-Commerce-Web",
+    "featured": true
+  },
+  {
+    "id": "daily-python-systems",
+    "title": "SYSTEMS & ALGORITHMS LAB",
+    "tagline": "Performance Benchmarks, C Memory Patterns & Python Internals",
+    "badge": "OPEN SOURCE LAB",
+    "problem": "High-level backend development often creates hidden performance bottlenecks when developers treat memory layouts and algorithmic complexity as black boxes.",
+    "solution": "Curated an in-depth 9-tier systems and backend engineering repository documenting low-level C memory patterns, pointer arithmetic, cache-conscious data structures, and production Python profiling.",
+    "architectureHighlight": "Cache-Conscious Data Structures & Memory Profiling: Analyzes pointer arithmetic and memory layout differences between C and Python, demonstrating how memory alignment, __slots__, and generator pipelines drastically reduce garbage collection pauses and RAM overhead in high-throughput services.",
+    "techStack": ["Python 3.12", "C Programming", "Data Structures", "Memory Profiling", "Systems Architecture"],
+    "githubUrl": "https://github.com/Adhil-cr/Daily-python",
+    "featured": false
+  }
+]

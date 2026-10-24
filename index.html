@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Core SEO Metadata -->
+  <title>Muhammed Adhil C. R. | Backend Software Developer &amp; Systems Engineer</title>
+  <meta name="description" content="Backend Software Developer based in Kochi, Kerala. Specializing in Python, Django, PostgreSQL database architecture, high-concurrency transaction locking, and low-level C fundamentals.">
+  <meta name="keywords" content="Muhammed Adhil C. R., Backend Developer, Python Developer, Django, PostgreSQL, C Programming, Systems Engineer, Kochi, Kerala, Remote Developer">
+  <meta name="author" content="Muhammed Adhil C. R.">
+  <link rel="canonical" href="https://adhil-cr.github.io/">
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Muhammed Adhil C. R. | Backend Software Developer">
+  <meta property="og:description" content="Architecting resilient backend systems, transactional database schemas, and automation platforms.">
+  <meta property="og:url" content="https://adhil-cr.github.io/">
+  <meta property="og:site_name" content="Muhammed Adhil C. R. Engineering Portfolio">
+  <meta property="profile:first_name" content="Muhammed Adhil">
+  <meta property="profile:last_name" content="C. R.">
+
+  <!-- Twitter / X Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Muhammed Adhil C. R. | Backend Software Developer">
+  <meta name="twitter:description" content="Backend engineer specializing in Python, Django, PostgreSQL, and low-level C memory patterns.">
+
+  <!-- GEO Optimization (Kochi, Kerala, India) -->
+  <meta name="geo.region" content="IN-KL">
+  <meta name="geo.placename" content="Kochi, Kerala, India">
+  <meta name="geo.position" content="9.9312;76.2673">
+  <meta name="ICBM" content="9.9312, 76.2673">
+
+  <!-- AEO & Search Engine Structured Data (JSON-LD Schema) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://adhil-cr.github.io/#person",
+        "name": "Muhammed Adhil C. R.",
+        "givenName": "Muhammed Adhil",
+        "familyName": "C. R.",
+        "jobTitle": "Backend Software Developer",
+        "url": "https://adhil-cr.github.io/",
+        "sameAs": [
+          "https://github.com/Adhil-CR",
+          "https://www.linkedin.com/in/adhil-cr",
+          "https://www.instagram.com/adhil_c.r/"
+        ],
+        "knowsAbout": [
+          "Python",
+          "Django",
+          "PostgreSQL",
+          "C Programming",
+          "Database Concurrency",
+          "REST APIs",
+          "System Architecture",
+          "Data Structures & Algorithms"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Kochi",
+          "addressRegion": "Kerala",
+          "addressCountry": "IN"
+        },
+        "description": "Backend software engineer specializing in resilient database design, ACID compliance, and concurrency optimization."
+      },
+      {
+        "@type": "ProfilePage",
+        "@id": "https://adhil-cr.github.io/#webpage",
+        "url": "https://adhil-cr.github.io/",
+        "name": "Muhammed Adhil C. R. - Engineering Portfolio",
+        "mainEntity": {
+          "@id": "https://adhil-cr.github.io/#person"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Tailwind CDN & Fonts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-linen: #FAF3E1;
+      --surface-cotton: #F5E7C6;
+      --accent-tangerine: #FF6D1F;
+      --black-hole: #222222;
+    }
+    * {
+      border-radius: 0px !important;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #FAF3E1;
+      color: #222222;
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+    .font-heading {
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Neo-Brutalist Tactile Shadows */
+    .brutal-shadow-sm {
+      box-shadow: 2px 2px 0px #222222;
+    }
+    .brutal-shadow {
+      box-shadow: 3px 3px 0px #222222;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+    }
+    .hover-elevate {
+      transition: transform 0.12s ease, box-shadow 0.12s ease;
+    }
+    .hover-elevate:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 6px 6px 0px #222222;
+    }
+    .hover-elevate:active {
+      transform: translate(2px, 2px);
+      box-shadow: 1px 1px 0px #222222;
+    }
+
+    /* Active Ambient Section & Nav Indicator */
+    .section-in-view .section-indicator-box {
+      background-color: #FF6D1F !important;
+      border-color: #222222 !important;
+      transform: scale(1.15);
+    }
+    .section-in-view .section-tag-label {
+      color: #222222 !important;
+      background-color: #FF6D1F !important;
+      font-weight: 700;
+    }
+    .nav-link.nav-active {
+      color: #FF6D1F !important;
+      text-decoration: underline;
+      text-underline-offset: 6px;
+      text-decoration-thickness: 2px;
+    }
+
+    /* Custom Brutalist Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #FAF3E1;
+      border-left: 2px solid #222222;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #222222;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-[#FAF3E1] text-[#222222] selection:bg-[#FF6D1F] selection:text-[#222222]">
+
+  <!-- Neo-Brutalist Backend Boot Loader Overlay -->
+  <div id="system-boot-loader" class="fixed inset-0 z-[100] bg-[#FAF3E1] flex items-center justify-center p-4 transition-all duration-500 ease-out">
+    <div class="w-full max-w-md bg-[#F5E7C6] border-2 border-[#222222] brutal-shadow p-6 md:p-8 space-y-5">
+      <!-- Title Bar -->
+      <div class="flex items-center justify-between border-b-2 border-[#222222] pb-3 text-xs font-mono font-bold">
+        <span class="flex items-center gap-2">
+          <span class="w-2.5 h-2.5 bg-[#FF6D1F] animate-pulse"></span>
+          <span>ADHIL.SYS // KERNEL BOOT</span>
+        </span>
+        <span id="loader-status-text" class="px-2 py-0.5 bg-[#222222] text-[#FAF3E1]">
+          INITIALIZING
+        </span>
+      </div>
+
+      <!-- Identity -->
+      <div class="space-y-1">
+        <h2 class="font-heading text-xl md:text-2xl font-bold uppercase tracking-tight text-[#222222]">
+          Muhammed Adhil C. R.
+        </h2>
+        <p class="font-mono text-xs text-[#222222]/80">
+          // Backend Developer &amp; Systems Engineer
+        </p>
+      </div>
+
+      <!-- Real-time Progress Bar -->
+      <div class="space-y-2">
+        <div class="flex justify-between font-mono text-xs font-bold">
+          <span class="text-[#222222]">ALLOCATING MEMORY HEAP</span>
+          <span id="loader-pct" class="text-[#FF6D1F] font-bold">0%</span>
+        </div>
+        <div class="w-full h-4 bg-[#FAF3E1] border-2 border-[#222222] overflow-hidden p-0.5">
+          <div id="loader-progress-bar" class="h-full bg-[#FF6D1F] transition-all duration-75 ease-out" style="width: 0%"></div>
+        </div>
+      </div>
+
+      <!-- Micro-log Terminal Window -->
+      <div class="bg-[#222222] text-[#FAF3E1] p-3 font-mono text-xs min-h-[44px] flex items-center gap-2 border border-[#222222]">
+        <span class="text-[#FF6D1F] font-bold">&gt;</span>
+        <span id="loader-log-line" class="truncate">Mounting PostgreSQL schemas...</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Top Navigation Bar -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-[#222222] border-b-2 border-[#222222] text-[#FAF3E1]">
+    <div class="max-w-[1100px] mx-auto px-4 md:px-6 h-14 flex items-center justify-between">
+      
+      <!-- Identity & Status Indicator -->
+      <div class="flex items-center gap-3">
+        <a href="#" class="font-heading text-sm md:text-base font-bold tracking-tight text-[#FAF3E1] hover:text-[#FF6D1F] transition-colors">
+          MUHAMMED ADHIL C. R.
+        </a>
+        <div class="flex items-center gap-2 border border-[#FAF3E1]/20 px-2 py-0.5 bg-[#222222]">
+          <span class="inline-block w-2 h-2 bg-[#FF6D1F] animate-pulse"></span>
+          <span class="font-mono text-[11px] font-semibold tracking-wider text-[#FF6D1F] uppercase hidden sm:inline">AVAILABLE FOR ROLES</span>
+          <span class="font-mono text-[10px] font-semibold tracking-wider text-[#FF6D1F] uppercase sm:hidden">AVAILABLE</span>
+        </div>
+      </div>
+
+      <!-- Desktop Links -->
+      <nav class="hidden md:flex items-center gap-6 font-mono text-xs font-semibold">
+        <a href="#about" class="nav-link text-[#FAF3E1] hover:text-[#FF6D1F] transition-colors" data-target="about">About</a>
+        <a href="#projects" class="nav-link text-[#FAF3E1] hover:text-[#FF6D1F] transition-colors" data-target="projects">Projects</a>
+        <a href="#activity" class="nav-link text-[#FAF3E1] hover:text-[#FF6D1F] transition-colors" data-target="activity">Open Source</a>
+        <a href="#writing" class="nav-link text-[#FAF3E1] hover:text-[#FF6D1F] transition-colors" data-target="writing">Writing</a>
+        <a href="#contact" class="nav-link px-3 py-1.5 bg-[#FF6D1F] text-[#222222] font-bold brutal-shadow-sm hover:translate-x-0.5 hover:translate-y-0.5 transition-transform" data-target="contact">
+          Contact →
+        </a>
+      </nav>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu-btn" aria-label="Toggle Navigation Menu" class="md:hidden flex items-center justify-center w-10 h-10 border border-[#FAF3E1]/30 text-[#FAF3E1] hover:text-[#FF6D1F] focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-[#222222] border-b-2 border-[#222222] px-4 py-4 space-y-3 font-mono text-sm border-t border-[#FAF3E1]/10">
+      <a href="#about" class="mobile-link block py-2 text-[#FAF3E1] border-b border-[#FAF3E1]/10 hover:text-[#FF6D1F]" data-target="about">
+        // 01. About &amp; Philosophy
+      </a>
+      <a href="#projects" class="mobile-link block py-2 text-[#FAF3E1] border-b border-[#FAF3E1]/10 hover:text-[#FF6D1F]" data-target="projects">
+        // 02. Featured Projects
+      </a>
+      <a href="#activity" class="mobile-link block py-2 text-[#FAF3E1] border-b border-[#FAF3E1]/10 hover:text-[#FF6D1F]" data-target="activity">
+        // 03. Open Source &amp; Repositories
+      </a>
+      <a href="#writing" class="mobile-link block py-2 text-[#FAF3E1] border-b border-[#FAF3E1]/10 hover:text-[#FF6D1F]" data-target="writing">
+        // 04. Technical Writing
+      </a>
+      <a href="#contact" class="mobile-link block py-3 px-4 bg-[#FF6D1F] text-[#222222] font-bold text-center mt-3" data-target="contact">
+        Initialize Contact →
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="max-w-[1100px] mx-auto px-4 md:px-6 pt-24 pb-16 space-y-16">
+
+    <!-- Hero Section -->
+    <section class="border-2 border-[#222222] bg-[#FAF3E1] brutal-shadow p-6 md:p-10 relative hover-elevate">
+      <div class="flex flex-wrap items-center justify-between gap-2 pb-6 mb-6 border-b-2 border-[#222222]">
+        <span class="font-mono text-xs md:text-sm font-bold tracking-wider text-[#222222] bg-[#F5E7C6] px-3 py-1 border border-[#222222]">
+          // BACKEND SOFTWARE DEVELOPER &amp; SYSTEMS ENGINEER
+        </span>
+        <span class="font-mono text-xs text-[#222222]/80">
+          KOCHI, KERALA // REMOTE READY
+        </span>
+      </div>
+
+      <div class="space-y-4 max-w-4xl">
+        <h1 class="font-heading text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-[#222222] uppercase leading-[1.05]">
+          Muhammed Adhil C. R.
+        </h1>
+        <p class="text-base sm:text-lg md:text-xl text-[#222222] font-normal leading-relaxed max-w-3xl">
+          Architecting resilient backend systems, transactional database schemas, and automation platforms with Python, Django, PostgreSQL, and low-level C fundamentals.
+        </p>
+      </div>
+
+      <!-- Action Buttons Row -->
+      <div class="mt-8 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 md:gap-4">
+        <!-- 1. Download Resume Button -->
+        <a href="assets/docs/Muhammed_Adhil_C_R.pdf" download="Muhammed_Adhil_CV.pdf" class="min-h-[48px] px-6 py-3 bg-[#FF6D1F] text-[#222222] hover:bg-[#222222] hover:text-[#FAF3E1] font-heading font-bold text-sm md:text-base border-2 border-[#222222] brutal-shadow hover-elevate flex items-center justify-center gap-2 text-center transition-colors">
+          <span>DOWNLOAD RESUME</span>
+          <span class="font-mono text-lg leading-none">↓</span>
+        </a>
+
+        <!-- 2. View Projects Button -->
+        <a href="#projects" class="min-h-[48px] px-6 py-3 bg-[#F5E7C6] text-[#222222] hover:bg-[#FF6D1F] font-heading font-bold text-sm md:text-base border-2 border-[#222222] brutal-shadow hover-elevate flex items-center justify-center gap-2 text-center transition-colors">
+          VIEW PROJECTS →
+        </a>
+
+        <!-- 3. Read About Me Button -->
+        <a href="#about" class="min-h-[48px] px-6 py-3 bg-[#FAF3E1] text-[#222222] hover:bg-[#F5E7C6] font-heading font-bold text-sm md:text-base border-2 border-[#222222] brutal-shadow hover-elevate flex items-center justify-center gap-2 text-center transition-colors">
+          READ ABOUT ME
+        </a>
+
+        <!-- 4. Get in Touch Button -->
+        <a href="#contact" class="min-h-[48px] px-6 py-3 bg-[#222222] text-[#FAF3E1] hover:text-[#FF6D1F] font-heading font-bold text-sm md:text-base border-2 border-[#222222] brutal-shadow hover-elevate flex items-center justify-center gap-2 text-center transition-colors">
+          GET IN TOUCH
+        </a>
+      </div>
+
+      <!-- Stack Chips -->
+      <div class="mt-8 pt-6 border-t border-[#222222]/30 flex flex-wrap items-center gap-2 md:gap-3">
+        <span class="font-mono text-xs font-bold text-[#222222] mr-2">CORE_STACK:</span>
+        <span class="px-2.5 py-1 bg-[#F5E7C6] text-[#222222] border border-[#222222] font-mono text-xs font-medium">[Python 3.12]</span>
+        <span class="px-2.5 py-1 bg-[#F5E7C6] text-[#222222] border border-[#222222] font-mono text-xs font-medium">[Django]</span>
+        <span class="px-2.5 py-1 bg-[#F5E7C6] text-[#222222] border border-[#222222] font-mono text-xs font-medium">[PostgreSQL]</span>
+        <span class="px-2.5 py-1 bg-[#F5E7C6] text-[#222222] border border-[#222222] font-mono text-xs font-medium">[C / Systems]</span>
+        <span class="px-2.5 py-1 bg-[#F5E7C6] text-[#222222] border border-[#222222] font-mono text-xs font-medium">[REST APIs]</span>
+        <span class="px-2.5 py-1 bg-[#F5E7C6] text-[#222222] border border-[#222222] font-mono text-xs font-medium">[Redis]</span>
+      </div>
+    </section>
+
+    <!-- 1. About & Engineering Philosophy Section -->
+    <section id="about" class="interactive-section scroll-mt-24 space-y-6">
+      <div class="flex items-center justify-between border-b-2 border-[#222222] pb-3">
+        <div class="flex items-center gap-2">
+          <span class="section-indicator-box w-3.5 h-3.5 bg-[#FAF3E1] border-2 border-[#222222] inline-block transition-all"></span>
+          <h2 class="font-heading text-xl md:text-2xl font-bold tracking-tight text-[#222222]">
+            ABOUT ME &amp; ENGINEERING APPROACH
+          </h2>
+        </div>
+        <span class="section-tag-label font-mono text-xs text-[#222222] bg-[#F5E7C6] px-2.5 py-1 border border-[#222222] hidden sm:inline transition-all">
+          IDENTITY // PRINCIPLES
+        </span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+        <!-- Personal Narrative (7 Cols) -->
+        <div class="lg:col-span-7 bg-[#F5E7C6] border-2 border-[#222222] brutal-shadow p-6 md:p-8 flex flex-col justify-between space-y-4 hover-elevate">
+          <div class="space-y-4">
+            <span class="font-mono text-xs font-bold text-[#FF6D1F] bg-[#222222] px-2 py-0.5 inline-block">
+              ENGINEERING BACKGROUND
+            </span>
+            <h3 class="font-heading text-xl md:text-2xl font-bold text-[#222222]">
+              Building backends with intentional data models and zero unnecessary layers.
+            </h3>
+            <p class="text-sm md:text-base text-[#222222] leading-relaxed">
+              I am a backend developer based in Kochi, Kerala, focused on writing predictable, concurrent, and fault-tolerant software.
+            </p>
+            <p class="text-sm md:text-base text-[#222222] leading-relaxed">
+              My engineering core is shaped by rigorous practice in C memory patterns and data structures, paired with modern backend development in Python, Django, and PostgreSQL. Whether resolving database locking contention in automated exam hall allocation or designing modular API services, I prioritize data integrity, strict transactional isolation, and clean software architecture.
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-[#222222]/20 font-mono text-xs flex flex-wrap gap-4 text-[#222222]/80">
+            <div><strong class="text-[#222222]">Location:</strong> Kochi, Kerala (Remote Ready)</div>
+            <div><strong class="text-[#222222]">Specialty:</strong> Relational Schemas &amp; Scalable APIs</div>
+          </div>
+        </div>
+
+        <!-- Principles Card (5 Cols) -->
+        <div class="lg:col-span-5 bg-[#FAF3E1] border-2 border-[#222222] border-l-8 border-l-[#FF6D1F] brutal-shadow p-6 md:p-8 space-y-5 hover-elevate">
+          <div class="font-mono text-xs font-bold text-[#222222] uppercase tracking-wider">
+            HOW I THINK ABOUT SYSTEMS:
+          </div>
+
+          <div class="space-y-4">
+            <div class="space-y-1">
+              <h4 class="font-heading text-base font-bold text-[#222222]">1. Data Integrity First</h4>
+              <p class="text-xs text-[#222222]/80 leading-relaxed">
+                Code is transient; database records are permanent. I design schemas with explicit relational constraints, proper indexes, and strict ACID transaction guarantees.
+              </p>
+            </div>
+
+            <div class="space-y-1">
+              <h4 class="font-heading text-base font-bold text-[#222222]">2. Master the Fundamentals</h4>
+              <p class="text-xs text-[#222222]/80 leading-relaxed">
+                Understanding pointers, memory layouts, and data structures in C informs how I write efficient, non-leaking Python and optimize complex ORM querysets.
+              </p>
+            </div>
+
+            <div class="space-y-1">
+              <h4 class="font-heading text-base font-bold text-[#222222]">3. Boring &amp; Predictable Architecture</h4>
+              <p class="text-xs text-[#222222]/80 leading-relaxed">
+                Reliability over hype. A well-tuned PostgreSQL instance and clean Django service layer beat over-engineered distributed systems every single time.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Featured Projects Section -->
+    <section id="projects" class="interactive-section scroll-mt-24 space-y-6">
+      <div class="flex items-center justify-between border-b-2 border-[#222222] pb-3">
+        <div class="flex items-center gap-2">
+          <span class="section-indicator-box w-3.5 h-3.5 bg-[#FAF3E1] border-2 border-[#222222] inline-block transition-all"></span>
+          <h2 class="font-heading text-xl md:text-2xl font-bold tracking-tight text-[#222222]">
+            FEATURED PROJECTS &amp; CASE STUDIES
+          </h2>
+        </div>
+        <span id="projects-count-badge" class="section-tag-label font-mono text-xs text-[#222222] bg-[#F5E7C6] px-2.5 py-1 border border-[#222222] hidden sm:inline transition-all">
+          CORE SYSTEMS // DYNAMIC
+        </span>
+      </div>
+
+      <!-- Dynamically loaded from ./data/projects.json -->
+      <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- Project 1: ExamCell Automation System (Fallback/Static Render) -->
+        <article class="bg-[#F5E7C6] border-2 border-[#222222] brutal-shadow flex flex-col justify-between p-6 md:p-7 hover-elevate">
+          <div class="space-y-4">
+            <div class="border-b-2 border-[#222222] pb-3">
+              <div class="flex items-center justify-between gap-2 mb-1.5">
+                <span class="font-mono text-[10px] md:text-[11px] font-bold text-[#FAF3E1] bg-[#222222] px-2 py-0.5 border border-[#222222]">
+                  CAPSTONE ENGINE
+                </span>
+                <span class="font-mono text-[10px] font-bold text-[#222222] bg-[#FF6D1F] px-1.5 py-0.5 border border-[#222222]">
+                  FEATURED
+                </span>
+              </div>
+              <h3 class="font-heading text-lg md:text-xl font-bold text-[#222222] leading-tight">
+                EXAMCELL AUTOMATION SYSTEM
+              </h3>
+              <p class="font-mono text-xs text-[#222222]/80 mt-1 font-semibold">
+                // High-Integrity Examination Hall &amp; Matrix Seating Engine
+              </p>
+            </div>
+
+            <div class="space-y-3 pt-1 text-xs md:text-sm text-[#222222]">
+              <div class="bg-[#FAF3E1] p-3 border border-[#222222]">
+                <strong class="font-mono text-[11px] uppercase tracking-wider text-[#FF6D1F] bg-[#222222] px-1.5 py-0.5 inline-block mb-1 font-bold">
+                  Problem
+                </strong>
+                <p class="leading-relaxed text-[#222222]">
+                  Manual examination seating across multi-department batches caused frequent subject collisions, underutilized hall capacities, and error-prone paper workflows during institutional examinations.
+                </p>
+              </div>
+              <div class="bg-[#FAF3E1] p-3 border border-[#222222]">
+                <strong class="font-mono text-[11px] uppercase tracking-wider text-[#222222] bg-[#F5E7C6] px-1.5 py-0.5 inline-block mb-1 font-bold border border-[#222222]">
+                  Solution
+                </strong>
+                <p class="leading-relaxed text-[#222222]">
+                  Built an automated matrix seating engine in Django &amp; PostgreSQL that normalizes student enrollments into 1:1 subject records, enforces deterministic anti-cheating distribution, and produces verifiable PDF/Excel seating plans in seconds.
+                </p>
+              </div>
+            </div>
+
+            <!-- Architecture Highlight -->
+            <div class="bg-[#FAF3E1] border-2 border-[#222222] border-l-4 border-l-[#FF6D1F] p-3.5 space-y-1.5">
+              <div class="flex items-center gap-1.5 font-mono text-[11px] font-bold text-[#222222] uppercase tracking-wide">
+                <span class="w-2 h-2 bg-[#FF6D1F] inline-block"></span>
+                <span>ARCHITECTURE HIGHLIGHT</span>
+              </div>
+              <p class="text-xs text-[#222222] leading-relaxed">
+                Matrix Bench Allocation &amp; Constraint Propagation: Models hall benches as discrete coordinate matrices (row × column × seat slot). Implements a dual-tier greedy allocation algorithm enforcing deterministic inter-department interleaving so no two adjacent students share the same exam paper while strictly respecting hall capacity limits.
+              </p>
+            </div>
+
+            <!-- Tech Stack Chips -->
+            <div class="pt-2 flex flex-wrap gap-1.5">
+              <span class="px-2 py-0.5 bg-[#FAF3E1] text-[#222222] border border-[#222222] font-mono text-[11px] font-medium">[Python 3.12]</span>
+              <span class="px-2 py-0.5 bg-[#FAF3E1] text-[#222222] border border-[#222222] font-mono text-[11px] font-medium">[Django]</span>
+              <span class="px-2 py-0.5 bg-[#FAF3E1] text-[#222222] border border-[#222222] font-mono text-[11px] font-medium">[PostgreSQL]</span>
+              <span class="px-2 py-0.5 bg-[#FAF3E1] text-[#222222] border border-[#222222] font-mono text-[11px] font-medium">[Pandas]</span>
+              <span class="px-2 py-0.5 bg-[#FAF3E1] text-[#222222] border border-[#222222] font-mono text-[11px] font-medium">[ReportLab]</span>
+              <span class="px-2 py-0.5 bg-[#FAF3E1] text-[#222222] border border-[#222222] font-mono text-[11px] font-medium">[PyInstaller]</span>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t-2 border-[#222222] flex items-center justify-between font-mono text-xs">
+            <a href="https://github.com/Adhil-cr/seating-system" target="_blank" rel="noopener noreferrer" class="font-bold text-[#222222] hover:text-[#FAF3E1] bg-[#FAF3E1] hover:bg-[#222222] px-3 py-1.5 border border-[#222222] brutal-shadow-sm hover:translate-x-0.5 hover:translate-y-0.5 transition-all flex items-center gap-1.5 group">
+              <span>View Architecture</span>
+              <span class="group-hover:translate-x-1 transition-transform">→</span>
+            </a>
+            <span class="text-[#222222]/70 font-semibold">Adhil-cr/seating-system</span>
+          </div>
+        </article>
+
+        <!-- Project 2: Core Commerce Service (Fallback/Static Render) -->
+        <article class="bg-[#F5E7C6] border-2 border-[#222222] brutal-shadow flex flex-col justify-between p-6 md:p-7 hover-elevate">
+          <div class="space-y-4">
+            <div class="border-b-2 border-[#222222] pb-3">
+              <div class="flex items-center justify-between gap-2 mb-1.5">
+                <span class="font-mono text-[10px] md:text-[11px] font-bold text-[#222222] bg-[#FF6D1F] px-2 py-0.5 border border-[#222222]">
+                  PRODUCTION BACKEND
+                </span>
+                <span class="font-mono text-[10px] font-bold text-[#222222] bg-[#FF6D1F] px-1.5 py-0.5 border border-[#222222]">
+                  FEATURED
+                </span>
+              </div>
+              <h3 class="font-heading text-lg md:text-xl font-bold text-[#222222] leading-tight">
+                CORE COMMERCE SERVICE
+              </h3>
+              <p class="font-mono text-xs text-[#222222]/80 mt-1 font-semibold">
+                // Transactional Backend Engine with Strict Concurrency &amp; Isolation
+              </p>
+            </div>
+
+            <div class="space-y-3 pt-1 text-xs md:text-sm text-[#222222]">
+              <div class="bg-[#FAF3E1] p-3 border border-[#222222]">
+                <strong class="font-mono text-[11px] uppercase tracking-wider text-[#FF6D1F] bg-[#222222] px-1.5 py-0.5 inline-block mb-1 font-bold">
+                  Problem
+                </strong>
+                <p class="leading-relaxed text-[#222222]">
+                  High-concurrency checkout spikes frequently cause inventory overselling, race conditions between simultaneous shoppers, and orphaned database states when cart sessions drop mid-payment.
+                </p>
+              </div>
+              <div class="bg-[#FAF3E1] p-3 border border-[#222222]">
+                <strong class="font-mono text-[11px] uppercase tracking-wider text-[#222222] bg-[#F5E7C6] px-1.5 py-0.5 inline-block mb-1 font-bold border border-[#222222]">
+                  Solution
+                </strong>
+                <p class="leading-relaxed text-[#222222]">
+                  Engineered a resilient Django commerce backend enforcing ACID database transactions with row-level locks, soft-deletion patterns for audit trails, and strict role-based access control between customer and administrative portals.
+                </p>
+              </div>
+            </div>
+
+            <!-- Architecture Highlight -->
+            <div class="bg-[#FAF3E1] border-2 border-[#222222] border-l-4 border-l-[#FF6D1F] p-3.5 space-y-1.5">
+              <div class="flex items-center gap-1.5 font-mono text-[11px] font-bold text-[#222222] uppercase tracking-wide">
+                <span class="w-2 h-2 bg-[#FF6D1F] inline-block"></span>
+                <span>ARCHITECTURE HIGHLIGHT</span>
+              </div>
+              <p class="text-xs text-[#222222] leading-relaxed">
+                Row-Level Lock Concurrency (SELECT FOR UPDATE): Leverages PostgreSQL row-level locks within atomic transaction blocks during inventory reservation, eliminating race conditions under simultaneous checkout attempts without the operational overhead of an external distributed locking service.
+              </p>
+            </div>
+
+            <!-- Tech Stack Chips -->
+            <div class="pt-2 flex flex-wrap gap-1.5">
+              <span class="px-2 py-0.5 bg-[#FAF3E1] text-[#222222] border border-[#222222] font-mono text-[11px] font-medium">[Python 3.12]</span>
+              <span class="px-2 py-0.5 bg-[#FAF3E1] text-[#222222] border border-[#222222] font-mono text-[11px] font-medium">[Django REST]</span>
+              <span class="px-2 py-0.5 bg-[#FAF3E1] text-[#222222] border border-[#222222] font-mono text-[11px] font-medium">[PostgreSQL]</span>
+              <span class="px-2 py-0.5 bg-[#FAF3E1] text-[#222222] border border-[#222222] font-mono text-[11px] font-medium">[ACID Transactions]</span>
+              <span class="px-2 py-0.5 bg-[#FAF3E1] text-[#222222] border border-[#222222] font-mono text-[11px] font-medium">[Gunicorn]</span>
+              <span class="px-2 py-0.5 bg-[#FAF3E1] text-[#222222] border border-[#222222] font-mono text-[11px] font-medium">[WhiteNoise]</span>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t-2 border-[#222222] flex items-center justify-between font-mono text-xs">
+            <a href="https://github.com/Adhil-cr/E-Commerce-Web" target="_blank" rel="noopener noreferrer" class="font-bold text-[#222222] hover:text-[#FAF3E1] bg-[#FAF3E1] hover:bg-[#222222] px-3 py-1.5 border border-[#222222] brutal-shadow-sm hover:translate-x-0.5 hover:translate-y-0.5 transition-all flex items-center gap-1.5 group">
+              <span>View Architecture</span>
+              <span class="group-hover:translate-x-1 transition-transform">→</span>
+            </a>
+            <span class="text-[#222222]/70 font-semibold">Adhil-cr/E-Commerce-Web</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 3. Open Source & Pinned Repositories -->
+    <section id="activity" class="interactive-section scroll-mt-24 space-y-6">
+      <div class="flex items-center justify-between border-b-2 border-[#222222] pb-3">
+        <div class="flex items-center gap-2">
+          <span class="section-indicator-box w-3.5 h-3.5 bg-[#FAF3E1] border-2 border-[#222222] inline-block transition-all"></span>
+          <h2 class="font-heading text-xl md:text-2xl font-bold tracking-tight text-[#222222]">
+            OPEN SOURCE &amp; PINNED REPOSITORIES
+          </h2>
+        </div>
+        <span class="section-tag-label font-mono text-xs text-[#222222] bg-[#F5E7C6] px-2.5 py-1 border border-[#222222] hidden sm:inline transition-all">
+          GITHUB // ACTIVE REPOS
+        </span>
+      </div>
+
+      <div class="bg-[#F5E7C6] border-2 border-[#222222] brutal-shadow p-6 md:p-8 space-y-6 hover-elevate">
+        <!-- Human-Readable Summary & Follow Link -->
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-5 bg-[#FAF3E1] border-2 border-[#222222] brutal-shadow-sm">
+          <div class="space-y-1.5 max-w-2xl">
+            <span class="font-mono text-xs font-bold text-[#FF6D1F] bg-[#222222] px-2 py-0.5 inline-block">
+              DEVELOPMENT VELOCITY
+            </span>
+            <p class="font-heading text-sm md:text-base font-bold text-[#222222] leading-snug">
+              Continuous Git shipping schedule with active contributions across backend repositories.
+            </p>
+          </div>
+          <a href="https://github.com/Adhil-CR" target="_blank" rel="noopener noreferrer" class="font-mono text-xs font-bold text-[#222222] hover:text-[#FAF3E1] bg-[#FF6D1F] hover:bg-[#222222] px-4 py-2.5 border-2 border-[#222222] brutal-shadow-sm hover:translate-x-0.5 hover:translate-y-0.5 transition-all whitespace-nowrap self-stretch sm:self-auto text-center">
+            Follow on GitHub →
+          </a>
+        </div>
+
+        <div class="flex items-center justify-between border-b border-[#222222]/30 pb-3">
+          <div class="flex items-center gap-2">
+            <span class="font-mono text-sm font-bold text-[#222222]">PINNED_REPOSITORIES</span>
+            <span class="text-xs font-mono text-[#222222]/70">(@Adhil-CR)</span>
+          </div>
+          <span id="repo-status-badge" class="font-mono text-xs font-bold text-[#222222] bg-[#FAF3E1] px-2.5 py-1 border border-[#222222]">
+            FETCHING LIVE...
+          </span>
+        </div>
+
+        <!-- Dynamic Pinned Repos Grid -->
+        <div id="github-pinned-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <a href="https://github.com/Adhil-cr/seating-system" target="_blank" rel="noopener noreferrer" class="group block p-5 md:p-6 bg-[#FAF3E1] border-2 border-[#222222] brutal-shadow hover-elevate hover:border-[#FF6D1F] transition-all cursor-pointer flex flex-col justify-between">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between gap-2">
+                <h3 class="font-heading text-base md:text-lg font-bold text-[#222222] group-hover:text-[#FF6D1F] transition-colors flex items-center gap-1.5">
+                  <span>seating-system</span>
+                  <span class="font-mono text-xs group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform inline-block">↗</span>
+                </h3>
+                <span class="font-mono text-[10px] font-bold px-1.5 py-0.5 bg-[#F5E7C6] border border-[#222222] text-[#222222] group-hover:bg-[#FF6D1F] transition-colors">
+                  PINNED
+                </span>
+              </div>
+              <p class="text-xs text-[#222222] leading-relaxed line-clamp-3">
+                ExamCell – Examination Hall Seating Arrangement Automation System built with Django, PostgreSQL, SQLite, and PyInstaller.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-[#222222]/20 flex items-center justify-between font-mono text-[11px] text-[#222222]/90">
+              <span class="flex items-center gap-1.5 font-semibold">
+                <span class="w-2.5 h-2.5 inline-block border border-[#222222] bg-[#3572A5]"></span>
+                Python
+              </span>
+              <span class="font-mono text-[11px] font-bold text-[#222222]/80 group-hover:text-[#222222] flex items-center gap-1">
+                Open Repo <span class="group-hover:translate-x-1 transition-transform">→</span>
+              </span>
+            </div>
+          </a>
+
+          <a href="https://github.com/Adhil-cr/Daily-python" target="_blank" rel="noopener noreferrer" class="group block p-5 md:p-6 bg-[#FAF3E1] border-2 border-[#222222] brutal-shadow hover-elevate hover:border-[#FF6D1F] transition-all cursor-pointer flex flex-col justify-between">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between gap-2">
+                <h3 class="font-heading text-base md:text-lg font-bold text-[#222222] group-hover:text-[#FF6D1F] transition-colors flex items-center gap-1.5">
+                  <span>Daily-python</span>
+                  <span class="font-mono text-xs group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform inline-block">↗</span>
+                </h3>
+                <span class="font-mono text-[10px] font-bold px-1.5 py-0.5 bg-[#F5E7C6] border border-[#222222] text-[#222222] group-hover:bg-[#FF6D1F] transition-colors">
+                  PINNED
+                </span>
+              </div>
+              <p class="text-xs text-[#222222] leading-relaxed line-clamp-3">
+                Comprehensive 9-tier software engineering journey from Python &amp; C memory fundamentals to production backend architecture.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-[#222222]/20 flex items-center justify-between font-mono text-[11px] text-[#222222]/90">
+              <span class="flex items-center gap-1.5 font-semibold">
+                <span class="w-2.5 h-2.5 inline-block border border-[#222222] bg-[#3572A5]"></span>
+                Python
+              </span>
+              <span class="font-mono text-[11px] font-bold text-[#222222]/80 group-hover:text-[#222222] flex items-center gap-1">
+                Open Repo <span class="group-hover:translate-x-1 transition-transform">→</span>
+              </span>
+            </div>
+          </a>
+
+          <a href="https://github.com/Adhil-cr/BroComplaint" target="_blank" rel="noopener noreferrer" class="group block p-5 md:p-6 bg-[#FAF3E1] border-2 border-[#222222] brutal-shadow hover-elevate hover:border-[#FF6D1F] transition-all cursor-pointer flex flex-col justify-between">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between gap-2">
+                <h3 class="font-heading text-base md:text-lg font-bold text-[#222222] group-hover:text-[#FF6D1F] transition-colors flex items-center gap-1.5">
+                  <span>BroComplaint</span>
+                  <span class="font-mono text-xs group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform inline-block">↗</span>
+                </h3>
+                <span class="font-mono text-[10px] font-bold px-1.5 py-0.5 bg-[#F5E7C6] border border-[#222222] text-[#222222] group-hover:bg-[#FF6D1F] transition-colors">
+                  PINNED
+                </span>
+              </div>
+              <p class="text-xs text-[#222222] leading-relaxed line-clamp-3">
+                Student grievance and complaint management portal with role-based routing and administrative tracking.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-[#222222]/20 flex items-center justify-between font-mono text-[11px] text-[#222222]/90">
+              <span class="flex items-center gap-1.5 font-semibold">
+                <span class="w-2.5 h-2.5 inline-block border border-[#222222] bg-[#3178c6]"></span>
+                TypeScript
+              </span>
+              <span class="font-mono text-[11px] font-bold text-[#222222]/80 group-hover:text-[#222222] flex items-center gap-1">
+                Open Repo <span class="group-hover:translate-x-1 transition-transform">→</span>
+              </span>
+            </div>
+          </a>
+
+          <a href="https://github.com/Adhil-cr/E-Commerce-Web" target="_blank" rel="noopener noreferrer" class="group block p-5 md:p-6 bg-[#FAF3E1] border-2 border-[#222222] brutal-shadow hover-elevate hover:border-[#FF6D1F] transition-all cursor-pointer flex flex-col justify-between">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between gap-2">
+                <h3 class="font-heading text-base md:text-lg font-bold text-[#222222] group-hover:text-[#FF6D1F] transition-colors flex items-center gap-1.5">
+                  <span>E-Commerce-Web</span>
+                  <span class="font-mono text-xs group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform inline-block">↗</span>
+                </h3>
+                <span class="font-mono text-[10px] font-bold px-1.5 py-0.5 bg-[#F5E7C6] border border-[#222222] text-[#222222] group-hover:bg-[#FF6D1F] transition-colors">
+                  PINNED
+                </span>
+              </div>
+              <p class="text-xs text-[#222222] leading-relaxed line-clamp-3">
+                Transactional Django E-Commerce backend service featuring cart workflows, soft-deletion, and row-level locking.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-[#222222]/20 flex items-center justify-between font-mono text-[11px] text-[#222222]/90">
+              <span class="flex items-center gap-1.5 font-semibold">
+                <span class="w-2.5 h-2.5 inline-block border border-[#222222] bg-[#e34c26]"></span>
+                HTML / Django
+              </span>
+              <span class="font-mono text-[11px] font-bold text-[#222222]/80 group-hover:text-[#222222] flex items-center gap-1">
+                Open Repo <span class="group-hover:translate-x-1 transition-transform">→</span>
+              </span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Curated LinkedIn Posts (Dynamic Feed) -->
+    <section id="writing" class="interactive-section scroll-mt-24 space-y-6">
+      <div class="flex items-center justify-between border-b-2 border-[#222222] pb-3">
+        <div class="flex items-center gap-2">
+          <span class="section-indicator-box w-3.5 h-3.5 bg-[#FAF3E1] border-2 border-[#222222] inline-block transition-all"></span>
+          <h2 class="font-heading text-xl md:text-2xl font-bold tracking-tight text-[#222222]">
+            CURATED TECHNICAL POSTS &amp; WRITING
+          </h2>
+        </div>
+        <span class="section-tag-label font-mono text-xs text-[#222222] bg-[#F5E7C6] px-2.5 py-1 border border-[#222222] hidden sm:inline transition-all">
+          LINKEDIN // SELECTED
+        </span>
+      </div>
+
+      <div id="linkedin-posts-container" class="space-y-6">
+        <!-- Post 1: Video Post -->
+        <article class="bg-[#F5E7C6] border-2 border-[#222222] border-l-8 border-l-[#FF6D1F] brutal-shadow p-6 md:p-8 space-y-4 hover-elevate">
+          <div class="flex flex-wrap items-center justify-between gap-2 font-mono text-xs font-bold text-[#222222]/80 tracking-wider">
+            <span>OCT 2026 • 2 MIN READ</span>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="bg-[#FAF3E1] px-2 py-0.5 border border-[#222222] text-[10px] text-[#222222] font-semibold">BUILD IN PUBLIC</span>
+              <span class="bg-[#FAF3E1] px-2 py-0.5 border border-[#222222] text-[10px] text-[#222222] font-semibold">PYTHON</span>
+              <span class="bg-[#FAF3E1] px-2 py-0.5 border border-[#222222] text-[10px] text-[#222222] font-semibold">DJANGO</span>
+              <span class="bg-[#FAF3E1] px-2 py-0.5 border border-[#222222] text-[10px] text-[#222222] font-semibold">SOFTWARE ENGINEERING</span>
+            </div>
+          </div>
+
+          <h3 class="font-heading text-xl md:text-2xl font-bold text-[#222222] leading-snug">
+            Curiosity to Code: Turning Technical Ideas into Real Products
+          </h3>
+
+          <p class="text-sm md:text-base text-[#222222] leading-relaxed">
+            I have always been curious about how things work, how ideas become products, and how technology can solve real problems. I'm a developer who loves exploring systems, learning new paradigms, and turning concepts into reality. Developing, exploring, and building production software is just the beginning.
+          </p>
+
+          <!-- Interactive Video Player with Native & Play/Pause Controls -->
+          <div class="mt-4 border-2 border-[#222222] bg-[#222222] overflow-hidden">
+            <div class="bg-[#222222] text-[#FAF3E1] px-3 py-1.5 font-mono text-xs flex items-center justify-between border-b border-[#FAF3E1]/20">
+              <span class="flex items-center gap-2">
+                <span class="w-2 h-2 bg-[#FF6D1F] animate-pulse"></span>
+                <span>VIDEO DEMO // MP4 PLAYBACK</span>
+              </span>
+              <span class="text-[10px] text-[#FAF3E1]/60 font-semibold">PLAY / PAUSE</span>
+            </div>
+            <video controls preload="metadata" poster="https://dms.licdn.com/playlist/vid/v2/D4D05AQH1XpsWVKGFkA/thumbnail-with-play-button-overlay-high/B4DaFDXR4WJUC8-/0/1792131542079?e=2147483647&amp;v=beta&amp;t=Bh2V31g4mU9GHces_2IzYu3t8f9_Ps1-98nTVmir3Ns" class="w-full max-h-[440px] bg-black object-contain">
+              <source src="assets/videos/curiosity_to_code.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+          <div class="pt-4 border-t border-[#222222]/20 flex items-center justify-between">
+            <a href="https://lnkd.in/p/d6kz5Kba" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 font-mono text-xs font-bold text-[#222222] hover:text-[#FAF3E1] bg-[#FAF3E1] hover:bg-[#222222] px-3.5 py-2 border border-[#222222] brutal-shadow-sm hover:translate-x-0.5 hover:translate-y-0.5 transition-all group">
+              <span>Watch Full Video &amp; Discussion on LinkedIn</span>
+              <span class="group-hover:translate-x-1 transition-transform">→</span>
+            </a>
+            <span class="font-mono text-[11px] text-[#222222]/60 font-semibold">VERIFIED AUTHOR</span>
+          </div>
+        </article>
+
+        <!-- Post 2: Image Post -->
+        <article class="bg-[#F5E7C6] border-2 border-[#222222] border-l-8 border-l-[#FF6D1F] brutal-shadow p-6 md:p-8 space-y-4 hover-elevate">
+          <div class="flex flex-wrap items-center justify-between gap-2 font-mono text-xs font-bold text-[#222222]/80 tracking-wider">
+            <span>SEP 2026 • 2 MIN READ</span>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="bg-[#FAF3E1] px-2 py-0.5 border border-[#222222] text-[10px] text-[#222222] font-semibold">BROTOTYPE</span>
+              <span class="bg-[#FAF3E1] px-2 py-0.5 border border-[#222222] text-[10px] text-[#222222] font-semibold">AI</span>
+              <span class="bg-[#FAF3E1] px-2 py-0.5 border border-[#222222] text-[10px] text-[#222222] font-semibold">WEB DEVELOPMENT</span>
+              <span class="bg-[#FAF3E1] px-2 py-0.5 border border-[#222222] text-[10px] text-[#222222] font-semibold">ACHIEVEMENT</span>
+            </div>
+          </div>
+
+          <h3 class="font-heading text-xl md:text-2xl font-bold text-[#222222] leading-snug">
+            Winner: Lovable AI Web App Challenge by Brototype Malayalam
+          </h3>
+
+          <p class="text-sm md:text-base text-[#222222] leading-relaxed">
+            Selected as one of the 3 winners in the Lovable AI Web App Creation Challenge by Brototype Malayalam. Receiving personal recognition from Nikhil Kilivayil and Jobin Selvanose was a milestone that reinforces my passion for building, shipping, and pushing engineering boundaries.
+          </p>
+
+          <a href="https://lnkd.in/p/dTTjNHeD" target="_blank" rel="noopener noreferrer" class="block mt-4 border-2 border-[#222222] overflow-hidden group/img relative bg-[#222222]">
+            <img src="assets/images/lovable_ai_winner.jpg" alt="Winner Announcement Brototype Lovable AI Challenge" class="w-full max-h-[440px] object-cover transition-transform duration-300 group-hover/img:scale-105" loading="lazy" />
+            <div class="absolute bottom-2 right-2 px-2.5 py-1 bg-[#222222]/90 text-[#FAF3E1] font-mono text-[10px] font-bold border border-[#FAF3E1]/30 backdrop-blur-sm group-hover/img:bg-[#FF6D1F] group-hover/img:text-[#222222] transition-colors">
+              Click to Open Post ↗
+            </div>
+          </a>
+
+          <div class="pt-4 border-t border-[#222222]/20 flex items-center justify-between">
+            <a href="https://lnkd.in/p/dTTjNHeD" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 font-mono text-xs font-bold text-[#222222] hover:text-[#FAF3E1] bg-[#FAF3E1] hover:bg-[#222222] px-3.5 py-2 border border-[#222222] brutal-shadow-sm hover:translate-x-0.5 hover:translate-y-0.5 transition-all group">
+              <span>Read Original Post on LinkedIn</span>
+              <span class="group-hover:translate-x-1 transition-transform">→</span>
+            </a>
+            <span class="font-mono text-[11px] text-[#222222]/60 font-semibold">VERIFIED AUTHOR</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Full-Width Inverted Footer -->
+  <footer id="contact" class="interactive-section scroll-mt-24 bg-[#222222] border-t-2 border-[#222222] text-[#FAF3E1] pt-14 pb-12">
+    <div class="max-w-[1100px] mx-auto px-4 md:px-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 pb-10 border-b border-[#FAF3E1]/20">
+        
+        <div class="space-y-3 max-w-xl">
+          <div class="font-mono text-xs text-[#FF6D1F] tracking-widest font-bold">
+            // STATUS: OPEN FOR OPPORTUNITIES
+          </div>
+          <h2 class="font-heading text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#FAF3E1] leading-tight">
+            Let's build scalable systems.
+          </h2>
+          <p class="text-sm md:text-base text-[#FAF3E1]/80 font-normal">
+            Based in Kochi, Kerala, India • Available for remote and on-site backend roles.
+          </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-3">
+          <!-- Working mailto link -->
+          <a href="mailto:adhilcheriyil@gmail.com?subject=Backend%20Engineering%20Opportunity&amp;body=Hi%20Adhil%2C%0A%0AI%20reviewed%20your%20backend%20portfolio%20and%20would%20like%20to%20connect.%0A%0ABest%20regards%2C" class="min-h-[48px] px-8 py-3.5 bg-[#FF6D1F] text-[#222222] font-heading font-bold text-sm md:text-base border-2 border-[#FAF3E1] brutal-shadow hover-elevate flex items-center justify-center gap-2 text-center w-full sm:w-auto hover:bg-[#FAF3E1] transition-colors">
+            INITIALIZE CONTACT →
+          </a>
+        </div>
+      </div>
+
+      <!-- Bottom Meta -->
+      <div class="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-[#FAF3E1]/60">
+        <div>
+          MUHAMMED ADHIL C. R. // BACKEND DEVELOPER
+        </div>
+        <div class="flex items-center gap-4">
+          <a href="https://github.com/Adhil-CR" target="_blank" rel="noopener noreferrer" class="hover:text-[#FF6D1F] transition-colors">GITHUB</a>
+          <span>/</span>
+          <a href="https://www.linkedin.com/in/adhil-cr" target="_blank" rel="noopener noreferrer" class="hover:text-[#FF6D1F] transition-colors">LINKEDIN</a>
+          <span>/</span>
+          <a href="https://www.instagram.com/adhil_c.r/" target="_blank" rel="noopener noreferrer" class="hover:text-[#FF6D1F] transition-colors">INSTAGRAM</a>
+        </div>
+        <div>
+          © 2026 • BUILT WITH ZERO BLOAT
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Dynamic Scripts & Interactivity -->
+  <script>
+    // 0. High-Performance Neo-Brutalist Boot Sequence (Minimum 2 Seconds)
+    function initBootLoader() {
+      const loader = document.getElementById('system-boot-loader');
+      if (!loader) return;
+
+      const progressBar = document.getElementById('loader-progress-bar');
+      const pctText = document.getElementById('loader-pct');
+      const logText = document.getElementById('loader-log-line');
+      const statusBadge = document.getElementById('loader-status-text');
+
+      const logs = [
+        "Booting Adhil Kernel v2.4 (x86_64-linux)...",
+        "Mounting PostgreSQL schemas & connection pools...",
+        "Verifying row-level locks & ACID transaction isolation...",
+        "Connecting Adhil-CR pinned repositories...",
+        "Loading architecture case studies & systems data...",
+        "SYSTEM INITIALIZED // STATUS: 200 OK"
+      ];
+
+      let progress = 0;
+      const duration = 2200; // Hold minimum 2.2 seconds for full atmospheric experience
+      const steps = 70;
+      const stepInterval = duration / steps;
+      const stepIncrement = 100 / steps;
+
+      const timer = setInterval(() => {
+        progress += stepIncrement;
+        if (progress > 100) progress = 100;
+
+        const currentPct = Math.floor(progress);
+        if (progressBar) progressBar.style.width = currentPct + '%';
+        if (pctText) pctText.textContent = currentPct + '%';
+
+        const logIndex = Math.min(Math.floor((progress / 100) * logs.length), logs.length - 1);
+        if (logText) logText.textContent = logs[logIndex];
+
+        if (progress >= 100) {
+          clearInterval(timer);
+          if (statusBadge) {
+            statusBadge.textContent = "ONLINE";
+            statusBadge.classList.replace("bg-[#222222]", "bg-[#FF6D1F]");
+            statusBadge.classList.replace("text-[#FAF3E1]", "text-[#222222]");
+          }
+          setTimeout(() => {
+            loader.style.opacity = '0';
+            loader.style.transform = 'translateY(-16px)';
+            loader.style.pointerEvents = 'none';
+            setTimeout(() => loader.remove(), 600);
+          }, 250);
+        }
+      }, stepInterval);
+    }
+    initBootLoader();
+
+    // 1. Mobile Drawer Navigation
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // 2. High-Performance Intersection Observer for Scroll-Spying
+    const sections = document.querySelectorAll('.interactive-section');
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -55% 0px',
+      threshold: 0
+    };
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const id = entry.target.getAttribute('id');
+        if (entry.isIntersecting) {
+          entry.target.classList.add('section-in-view');
+          navLinks.forEach(link => {
+            if (link.getAttribute('data-target') === id) {
+              link.classList.add('nav-active');
+            } else {
+              link.classList.remove('nav-active');
+            }
+          });
+          mobileLinks.forEach(link => {
+            if (link.getAttribute('data-target') === id) {
+              link.classList.add('text-[#FF6D1F]');
+            } else {
+              link.classList.remove('text-[#FF6D1F]');
+            }
+          });
+        } else {
+          entry.target.classList.remove('section-in-view');
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(sec => sectionObserver.observe(sec));
+
+    // 3. Dynamic Projects Loader (from ./data/projects.json)
+    async function renderProjects() {
+      const container = document.getElementById('projects-grid');
+      const countBadge = document.getElementById('projects-count-badge');
+      if (!container) return;
+
+      try {
+        const res = await fetch('./data/projects.json');
+        if (!res.ok) throw new Error('Failed to load projects');
+        const projects = await res.json();
+
+        if (Array.isArray(projects) && projects.length > 0) {
+          if (countBadge) {
+            countBadge.textContent = `CORE SYSTEMS // COUNT: ${String(projects.length).padStart(2, '0')}`;
+          }
+
+          container.innerHTML = projects.map(proj => `
+            <article class="bg-[#F5E7C6] border-2 border-[#222222] brutal-shadow flex flex-col justify-between p-6 md:p-7 hover-elevate">
+              <div class="space-y-4">
+                <!-- Header: Title, Tagline & Badge -->
+                <div class="border-b-2 border-[#222222] pb-3">
+                  <div class="flex items-center justify-between gap-2 mb-1.5">
+                    <span class="font-mono text-[10px] md:text-[11px] font-bold text-[#FAF3E1] bg-[#222222] px-2 py-0.5 border border-[#222222]">
+                      ${proj.badge || 'CORE ENGINE'}
+                    </span>
+                    ${proj.featured ? `
+                      <span class="font-mono text-[10px] font-bold text-[#222222] bg-[#FF6D1F] px-1.5 py-0.5 border border-[#222222]">
+                        FEATURED
+                      </span>
+                    ` : ''}
+                  </div>
+                  <h3 class="font-heading text-lg md:text-xl font-bold text-[#222222] leading-tight">
+                    ${proj.title}
+                  </h3>
+                  <p class="font-mono text-xs text-[#222222]/80 mt-1 font-semibold">
+                    // ${proj.tagline}
+                  </p>
+                </div>
+
+                <!-- Problem & Solution -->
+                <div class="space-y-3 pt-1 text-xs md:text-sm text-[#222222]">
+                  <div class="bg-[#FAF3E1] p-3 border border-[#222222]">
+                    <strong class="font-mono text-[11px] uppercase tracking-wider text-[#FF6D1F] bg-[#222222] px-1.5 py-0.5 inline-block mb-1 font-bold">
+                      Problem
+                    </strong>
+                    <p class="leading-relaxed text-[#222222]">${proj.problem}</p>
+                  </div>
+                  <div class="bg-[#FAF3E1] p-3 border border-[#222222]">
+                    <strong class="font-mono text-[11px] uppercase tracking-wider text-[#222222] bg-[#F5E7C6] px-1.5 py-0.5 inline-block mb-1 font-bold border border-[#222222]">
+                      Solution
+                    </strong>
+                    <p class="leading-relaxed text-[#222222]">${proj.solution}</p>
+                  </div>
+                </div>
+
+                <!-- Architecture Highlight -->
+                <div class="bg-[#FAF3E1] border-2 border-[#222222] border-l-4 border-l-[#FF6D1F] p-3.5 space-y-1.5">
+                  <div class="flex items-center gap-1.5 font-mono text-[11px] font-bold text-[#222222] uppercase tracking-wide">
+                    <span class="w-2 h-2 bg-[#FF6D1F] inline-block"></span>
+                    <span>ARCHITECTURE HIGHLIGHT</span>
+                  </div>
+                  <p class="text-xs text-[#222222] leading-relaxed">
+                    ${proj.architectureHighlight}
+                  </p>
+                </div>
+
+                <!-- Tech Stack Chips -->
+                <div class="pt-2 flex flex-wrap gap-1.5">
+                  ${(proj.techStack || []).map(tech => `
+                    <span class="px-2 py-0.5 bg-[#FAF3E1] text-[#222222] border border-[#222222] font-mono text-[11px] font-medium">[${tech}]</span>
+                  `).join('')}
+                </div>
+              </div>
+
+              <!-- Footer / Link -->
+              <div class="mt-6 pt-4 border-t-2 border-[#222222] flex items-center justify-between font-mono text-xs">
+                <a href="${proj.githubUrl}" target="_blank" rel="noopener noreferrer" class="font-bold text-[#222222] hover:text-[#FAF3E1] bg-[#FAF3E1] hover:bg-[#222222] px-3 py-1.5 border border-[#222222] brutal-shadow-sm hover:translate-x-0.5 hover:translate-y-0.5 transition-all flex items-center gap-1.5 group">
+                  <span>View Architecture</span>
+                  <span class="group-hover:translate-x-1 transition-transform">→</span>
+                </a>
+                <span class="text-[#222222]/70 font-semibold truncate max-w-[150px] sm:max-w-none">
+                  ${proj.githubUrl.replace('https://github.com/', '')}
+                </span>
+              </div>
+            </article>
+          `).join('');
+        }
+      } catch (err) {
+        console.warn('Projects dynamic load notice (fallback active):', err);
+      }
+    }
+    renderProjects();
+
+    // 4. Dynamic GitHub Pinned Repositories Fetcher
+    async function loadPinnedRepos() {
+      const username = 'Adhil-CR';
+      const container = document.getElementById('github-pinned-grid');
+      const badge = document.getElementById('repo-status-badge');
+      if (!container) return;
+
+      const renderReposList = (repos) => {
+        container.innerHTML = repos.map(repo => {
+          const repoName = repo.repo || repo.name;
+          const repoUrl = repo.link || repo.html_url || `https://github.com/${username}/${repoName}`;
+          const repoDesc = repo.description || 'Backend systems and algorithmic implementations repository.';
+          const repoLang = repo.language || 'Python';
+          const repoStars = repo.stars !== undefined ? repo.stars : (repo.stargazers_count || 0);
+          const langColor = repo.languageColor || (repoLang === 'Python' ? '#3572A5' : repoLang === 'TypeScript' ? '#3178c6' : repoLang === 'HTML' ? '#e34c26' : repoLang === 'C' ? '#555555' : '#FF6D1F');
+
+          return `
+            <a href="${repoUrl}" target="_blank" rel="noopener noreferrer" class="group block p-5 md:p-6 bg-[#FAF3E1] border-2 border-[#222222] brutal-shadow hover-elevate hover:border-[#FF6D1F] transition-all cursor-pointer flex flex-col justify-between">
+              <div class="space-y-2">
+                <div class="flex items-center justify-between gap-2">
+                  <h3 class="font-heading text-base md:text-lg font-bold text-[#222222] group-hover:text-[#FF6D1F] transition-colors flex items-center gap-1.5">
+                    <span>${repoName}</span>
+                    <span class="font-mono text-xs group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform inline-block">↗</span>
+                  </h3>
+                  <span class="font-mono text-[10px] font-bold px-1.5 py-0.5 bg-[#F5E7C6] border border-[#222222] text-[#222222] group-hover:bg-[#FF6D1F] transition-colors">
+                    PINNED
+                  </span>
+                </div>
+                <p class="text-xs text-[#222222] leading-relaxed line-clamp-3">
+                  ${repoDesc}
+                </p>
+              </div>
+              <div class="mt-4 pt-3 border-t border-[#222222]/20 flex items-center justify-between font-mono text-[11px] text-[#222222]/90">
+                <span class="flex items-center gap-1.5 font-semibold">
+                  <span class="w-2.5 h-2.5 inline-block border border-[#222222]" style="background-color: ${langColor}"></span>
+                  ${repoLang}
+                </span>
+                <span class="font-mono text-[11px] font-bold text-[#222222]/80 group-hover:text-[#222222] flex items-center gap-1">
+                  Open Repo <span class="group-hover:translate-x-1 transition-transform">→</span>
+                </span>
+              </div>
+            </a>
+          `;
+        }).join('');
+      };
+
+      try {
+        const res = await fetch('./data/pinned_repos.json');
+        if (!res.ok) throw new Error('Could not load pinned_repos.json');
+        const repos = await res.json();
+        if (Array.isArray(repos) && repos.length > 0) {
+          renderReposList(repos);
+          if (badge) badge.textContent = 'SYNCED WITH GITHUB';
+          return;
+        }
+        throw new Error('Empty response');
+      } catch (err) {
+        // Fallback: load pre-cached exact pinned repositories
+        renderReposList([
+          { repo: 'seating-system', link: 'https://github.com/Adhil-cr/seating-system', description: 'ExamCell – Examination Hall Seating Arrangement Automation System built with Django, PostgreSQL, SQLite, and PyInstaller.', language: 'Python', languageColor: '#3572A5', stars: 0 },
+          { repo: 'Daily-python', link: 'https://github.com/Adhil-cr/Daily-python', description: 'Comprehensive 9-tier software engineering journey from Python & C memory fundamentals to production backend architecture.', language: 'Python', languageColor: '#3572A5', stars: 0 },
+          { repo: 'BroComplaint', link: 'https://github.com/Adhil-cr/BroComplaint', description: 'Student grievance and complaint management portal with role-based routing and administrative tracking.', language: 'TypeScript', languageColor: '#3178c6', stars: 0 },
+          { repo: 'E-Commerce-Web', link: 'https://github.com/Adhil-cr/E-Commerce-Web', description: 'Transactional Django E-Commerce backend service featuring cart workflows, soft-deletion, and row-level locking.', language: 'HTML', languageColor: '#e34c26', stars: 0 }
+        ]);
+        if (badge) badge.textContent = 'CACHED PINNED REPOS';
+      }
+    }
+    loadPinnedRepos();
+
+    // 5. Asynchronous Curated LinkedIn Posts Fetcher (from ./data/featured_posts.json)
+    async function renderLinkedInPosts() {
+      const container = document.getElementById('linkedin-posts-container');
+      if (!container) return;
+
+      try {
+        const res = await fetch('./data/featured_posts.json');
+        if (!res.ok) throw new Error('Failed to load posts');
+        const posts = await res.json();
+
+        container.innerHTML = posts.map(post => {
+          const tags = Array.isArray(post.tags) ? post.tags : (post.tag ? [post.tag] : ['ENGINEERING']);
+          const readTime = post.readTime ? ` • ${post.readTime}` : '';
+
+          return `
+            <article class="bg-[#F5E7C6] border-2 border-[#222222] border-l-8 border-l-[#FF6D1F] brutal-shadow p-6 md:p-8 space-y-4 hover-elevate">
+              <div class="flex flex-wrap items-center justify-between gap-2 font-mono text-xs font-bold text-[#222222]/80 tracking-wider">
+                <span>${post.date || 'RECENT'}${readTime}</span>
+                <div class="flex flex-wrap gap-1.5">
+                  ${tags.map(t => `
+                    <span class="bg-[#FAF3E1] px-2 py-0.5 border border-[#222222] text-[10px] text-[#222222] font-semibold">${t}</span>
+                  `).join('')}
+                </div>
+              </div>
+
+              <h3 class="font-heading text-xl md:text-2xl font-bold text-[#222222] leading-snug">
+                ${post.title}
+              </h3>
+
+              <p class="text-sm md:text-base text-[#222222] leading-relaxed">
+                ${post.content}
+              </p>
+
+              ${post.videoUrl ? `
+                <div class="mt-4 border-2 border-[#222222] bg-[#222222] overflow-hidden">
+                  <div class="bg-[#222222] text-[#FAF3E1] px-3 py-1.5 font-mono text-xs flex items-center justify-between border-b border-[#FAF3E1]/20">
+                    <span class="flex items-center gap-2">
+                      <span class="w-2 h-2 bg-[#FF6D1F] animate-pulse"></span>
+                      <span>VIDEO DEMO // MP4 PLAYBACK</span>
+                    </span>
+                    <span class="text-[10px] text-[#FAF3E1]/60 font-semibold">PLAY / PAUSE</span>
+                  </div>
+                  <video controls preload="metadata" poster="${post.imageUrl || ''}" class="w-full max-h-[440px] bg-black object-contain">
+                    <source src="${post.videoUrl}" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              ` : (post.imageUrl ? `
+                <a href="${post.linkedinUrl || 'https://www.linkedin.com/in/adhil-cr'}" target="_blank" rel="noopener noreferrer" class="block mt-4 border-2 border-[#222222] overflow-hidden group/img relative bg-[#222222]">
+                  <img src="${post.imageUrl}" alt="${post.title}" class="w-full max-h-[440px] object-cover transition-transform duration-300 group-hover/img:scale-105" loading="lazy" />
+                  <div class="absolute bottom-2 right-2 px-2.5 py-1 bg-[#222222]/90 text-[#FAF3E1] font-mono text-[10px] font-bold border border-[#FAF3E1]/30 backdrop-blur-sm group-hover/img:bg-[#FF6D1F] group-hover/img:text-[#222222] transition-colors">
+                    Click to Open Post ↗
+                  </div>
+                </a>
+              ` : '')}
+
+              <div class="pt-4 border-t border-[#222222]/20 flex items-center justify-between">
+                <a href="${post.linkedinUrl || 'https://www.linkedin.com/in/adhil-cr'}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 font-mono text-xs font-bold text-[#222222] hover:text-[#FAF3E1] bg-[#FAF3E1] hover:bg-[#222222] px-3.5 py-2 border border-[#222222] brutal-shadow-sm hover:translate-x-0.5 hover:translate-y-0.5 transition-all group">
+                  <span>${post.videoUrl || post.mediaType === 'video' ? 'Watch Full Video & Discussion on LinkedIn' : 'Read Original Post on LinkedIn'}</span>
+                  <span class="group-hover:translate-x-1 transition-transform">→</span>
+                </a>
+                <span class="font-mono text-[11px] text-[#222222]/60 font-semibold">VERIFIED AUTHOR</span>
+              </div>
+            </article>
+          `;
+        }).join('');
+      } catch (err) {
+        console.warn('LinkedIn posts fetch note (pre-rendered cards preserved):', err);
+      }
+    }
+    renderLinkedInPosts();
+  </script>
+
+</body>
+</html>
