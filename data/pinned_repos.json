@@ -1,34 +1,42 @@
 [
   {
     "repo": "seating-system",
+    "name": "ExamCell Automation System",
     "link": "https://github.com/Adhil-cr/seating-system",
-    "description": "ExamCell – Examination Hall Seating Arrangement Automation System built with Django, PostgreSQL, SQLite, and PyInstaller.",
+    "description": "High-integrity examination hall and matrix seating engine in Django & PostgreSQL that normalizes enrollments and generates deterministic seating plans.",
     "language": "Python",
     "languageColor": "#3572A5",
-    "stars": 0
-  },
-  {
-    "repo": "Daily-python",
-    "link": "https://github.com/Adhil-cr/Daily-python",
-    "description": "Comprehensive 9-tier software engineering journey from Python & C memory fundamentals to production backend architecture.",
-    "language": "Python",
-    "languageColor": "#3572A5",
-    "stars": 0
-  },
-  {
-    "repo": "BroComplaint",
-    "link": "https://github.com/Adhil-cr/BroComplaint",
-    "description": "admin account username : admin password : admin123 | student account email : muhammedadhil639@gmail.com password : 123456",
-    "language": "TypeScript",
-    "languageColor": "#3178c6",
+    "tech": ["Python 3.12", "Django", "PostgreSQL", "Pandas"],
     "stars": 0
   },
   {
     "repo": "E-Commerce-Web",
+    "name": "Core Commerce Service",
     "link": "https://github.com/Adhil-cr/E-Commerce-Web",
-    "description": "Basic E-Commerce Web-Application",
-    "language": "HTML",
-    "languageColor": "#e34c26",
+    "description": "Transactional Django commerce backend enforcing ACID database transactions with row-level locking (SELECT FOR UPDATE) to eliminate checkout race conditions.",
+    "language": "Python / Django",
+    "languageColor": "#3572A5",
+    "tech": ["Python 3.12", "Django REST", "PostgreSQL", "ACID Transactions"],
+    "stars": 0
+  },
+  {
+    "repo": "Daily-python",
+    "name": "Systems & Algorithms Lab",
+    "link": "https://github.com/Adhil-cr/Daily-python",
+    "description": "Comprehensive 9-tier software engineering repository exploring low-level C memory patterns, pointer arithmetic, and cache-conscious Python internals.",
+    "language": "Python / C",
+    "languageColor": "#3572A5",
+    "tech": ["Python 3.12", "C Programming", "Data Structures", "Memory Profiling"],
+    "stars": 0
+  },
+  {
+    "repo": "BroComplaint",
+    "name": "BroComplaint Portal",
+    "link": "https://github.com/Adhil-cr/BroComplaint",
+    "description": "Student grievance and administrative tracking portal engineered with TypeScript, modular routing, and role-based access control.",
+    "language": "TypeScript",
+    "languageColor": "#3178c6",
+    "tech": ["TypeScript", "Fullstack", "RBAC", "REST"],
     "stars": 0
   }
 ]
