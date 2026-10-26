@@ -170,29 +170,33 @@
       text-decoration-thickness: 2px;
     }
 
-    /* Name-Fill Loader Overlay */
+    /* Aesthetic Neo-Brutalist HUD Loader Overlay */
     #name-loader {
       position: fixed;
       inset: 0;
       z-index: 9999;
-      background-color: #222222;
+      background-color: #161618;
+      background-image: 
+        radial-gradient(circle at 50% 45%, rgba(255, 109, 31, 0.12) 0%, transparent 65%),
+        radial-gradient(#28282c 1px, transparent 1px);
+      background-size: 100% 100%, 24px 24px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
+      padding: 1.5rem;
+      transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s;
     }
     #name-loader.loader-hidden {
       opacity: 0;
+      transform: scale(0.985) translateY(-8px);
       visibility: hidden;
       pointer-events: none;
     }
-    .loader-name {
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700;
-      font-size: clamp(2rem, 7vw, 3.8rem);
-      letter-spacing: -0.02em;
-      color: rgba(250, 243, 225, 0.22);
+    .loader-card {
+      box-shadow: 6px 6px 0px #FF6D1F, 6px 6px 0px 2px #222222;
+    }
+    .loader-name-text {
       position: relative;
       display: inline-block;
       user-select: none;
@@ -201,9 +205,9 @@
       background-position: 100% 0;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      animation: nameFill 1.1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      animation: nameSweep 1.15s cubic-bezier(0.4, 0, 0.2, 1) forwards;
     }
-    @keyframes nameFill {
+    @keyframes nameSweep {
       0% {
         background-position: 100% 0;
       }
@@ -211,27 +215,12 @@
         background-position: 0% 0;
       }
     }
-    .loader-line-track {
-      width: clamp(140px, 32vw, 240px);
-      height: 2px;
-      background-color: rgba(250, 243, 225, 0.15);
-      margin-top: 14px;
-      overflow: hidden;
-      position: relative;
+    @keyframes cursorBlink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
     }
-    .loader-line-fill {
-      height: 100%;
-      width: 0%;
-      background-color: #FF6D1F;
-      animation: lineFill 1.1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    }
-    @keyframes lineFill {
-      0% {
-        width: 0%;
-      }
-      100% {
-        width: 100%;
-      }
+    .loader-blink-cursor {
+      animation: cursorBlink 0.75s infinite;
     }
 
     /* Accessibility: Respect Reduced Motion */
@@ -275,12 +264,51 @@
     Skip to main content
   </a>
 
-  <!-- Minimalist Name-Fill Loader Overlay (Only Name: "Adhil C. R") -->
+  <!-- Aesthetic Neo-Brutalist HUD Loader Overlay (Adhil C. R) -->
   <div id="name-loader" aria-hidden="true" role="status">
-    <div class="flex flex-col items-center justify-center p-4">
-      <div class="loader-name">Adhil C.&nbsp;R</div>
-      <div class="loader-line-track">
-        <div class="loader-line-fill"></div>
+    <div class="loader-card w-full max-w-[460px] bg-[#1e1e22] border-2 border-[#222222] p-6 sm:p-8 relative">
+      <!-- Crosshair Registration Marks -->
+      <span class="absolute -top-2 -left-2 text-[#FF6D1F] font-mono text-xs font-bold select-none">+</span>
+      <span class="absolute -top-2 -right-2 text-[#FF6D1F] font-mono text-xs font-bold select-none">+</span>
+      <span class="absolute -bottom-2 -left-2 text-[#FF6D1F] font-mono text-xs font-bold select-none">+</span>
+      <span class="absolute -bottom-2 -right-2 text-[#FF6D1F] font-mono text-xs font-bold select-none">+</span>
+
+      <!-- Card Top Status Bar -->
+      <div class="flex items-center justify-between border-b border-[#FAF3E1]/15 pb-3 mb-4 font-mono text-[11px]">
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-[#FF6D1F] animate-ping"></span>
+          <span class="font-bold tracking-wider text-[#FAF3E1]">SYSTEM // BOOTSTRAP</span>
+        </div>
+        <span id="loader-status-badge" class="px-2 py-0.5 bg-[#222222] border border-[#FF6D1F]/60 text-[#FF6D1F] font-bold text-[10px] tracking-widest uppercase transition-colors">
+          INITIALIZING
+        </span>
+      </div>
+
+      <!-- Category Label -->
+      <div class="font-mono text-[10px] sm:text-[11px] tracking-widest text-[#FF6D1F] uppercase font-bold mb-1.5">
+        // BACKEND &amp; SYSTEMS ARCHITECTURE
+      </div>
+
+      <!-- Name Reveal with Blinking Cursor -->
+      <div class="space-y-1 mb-6">
+        <h2 class="font-heading text-3xl sm:text-4xl font-bold tracking-tight text-[#FAF3E1] flex items-center">
+          <span class="loader-name-text">Adhil C.&nbsp;R</span>
+          <span class="loader-blink-cursor inline-block w-2.5 h-7 ml-2 bg-[#FF6D1F]"></span>
+        </h2>
+      </div>
+
+      <!-- Precision HUD Progress Track & Micro-Log -->
+      <div class="space-y-2.5">
+        <div class="w-full h-2.5 bg-[#141416] border border-[#FAF3E1]/20 p-0.5 overflow-hidden">
+          <div id="loader-progress-bar" class="h-full bg-gradient-to-r from-[#FF6D1F] to-[#FFA16C] shadow-[0_0_10px_rgba(255,109,31,0.6)] transition-all duration-75 ease-out" style="width: 0%"></div>
+        </div>
+
+        <div class="flex items-center justify-between font-mono text-[10px] sm:text-[11px] pt-1">
+          <span id="loader-micro-log" class="text-[#FAF3E1]/70 truncate max-w-[260px] sm:max-w-[320px]">
+            Mounting relational schemas...
+          </span>
+          <span id="loader-pct-counter" class="text-[#FF6D1F] font-bold">0%</span>
+        </div>
       </div>
     </div>
   </div>
@@ -543,7 +571,11 @@
               <div class="flex flex-wrap items-center gap-2">
                 <a href="https://github.com/Adhil-cr/seating-system" target="_blank" rel="noopener noreferrer" aria-label="View source code for ExamCell Automation System" class="min-h-[44px] font-mono text-xs font-bold text-[#222222] hover:text-[#FAF3E1] bg-[#FAF3E1] hover:bg-[#222222] px-3 py-2 border border-[#222222] brutal-shadow-sm hover:translate-x-0.5 hover:translate-y-0.5 transition-all flex items-center gap-1.5">
                   <span>Source Code</span>
-                  <span>→</span>
+                  <span aria-hidden="true">→</span>
+                </a>
+                <a href="https://benchmap.in/" target="_blank" rel="noopener noreferrer" aria-label="Open live demo for ExamCell Automation System" class="min-h-[44px] font-mono text-xs font-bold text-[#222222] hover:text-[#FAF3E1] bg-[#FF6D1F] hover:bg-[#222222] px-3.5 py-2 border border-[#222222] brutal-shadow-sm hover:translate-x-0.5 hover:translate-y-0.5 transition-all flex items-center gap-1.5">
+                  <span>Live Demo</span>
+                  <span aria-hidden="true">↗</span>
                 </a>
               </div>
               <span class="font-mono text-[11px] text-[#222222]/70 font-semibold truncate">seating-system</span>
@@ -649,7 +681,11 @@
               <div class="flex flex-wrap items-center gap-2">
                 <a href="https://github.com/Adhil-cr/BroComplaint" target="_blank" rel="noopener noreferrer" aria-label="View source code for BroComplaint Portal" class="min-h-[44px] font-mono text-xs font-bold text-[#222222] hover:text-[#FAF3E1] bg-[#FAF3E1] hover:bg-[#222222] px-3 py-2 border border-[#222222] brutal-shadow-sm hover:translate-x-0.5 hover:translate-y-0.5 transition-all flex items-center gap-1.5">
                   <span>Source Code</span>
-                  <span>→</span>
+                  <span aria-hidden="true">→</span>
+                </a>
+                <a href="https://brototype-issue-tracker.lovable.app" target="_blank" rel="noopener noreferrer" aria-label="Open live demo for BroComplaint Portal" class="min-h-[44px] font-mono text-xs font-bold text-[#222222] hover:text-[#FAF3E1] bg-[#FF6D1F] hover:bg-[#222222] px-3.5 py-2 border border-[#222222] brutal-shadow-sm hover:translate-x-0.5 hover:translate-y-0.5 transition-all flex items-center gap-1.5">
+                  <span>Live Demo</span>
+                  <span aria-hidden="true">↗</span>
                 </a>
               </div>
               <span class="font-mono text-[11px] text-[#222222]/70 font-semibold truncate">BroComplaint</span>
@@ -811,35 +847,34 @@
     // ==========================================================================
     // 1. PROJECT ACTIONS CONFIGURATION
     // ==========================================================================
-    // To display the "Live Demo" button on any project card, simply paste your live URL
-    // into liveUrl below. The button will automatically appear.
-    // If left empty (''), no button or broken link will be rendered.
+    // Repository configurations. If a repository has a website in its GitHub About section,
+    // it is automatically detected and rendered. You can also manually override liveUrl here.
     const PROJECT_CONFIGS = {
       'seating-system': {
         name: 'ExamCell Automation System',
         repoUrl: 'https://github.com/Adhil-cr/seating-system',
-        liveUrl: '', // <-- add live URL here and the button appears automatically
+        liveUrl: 'https://benchmap.in/', // <-- Live link from GitHub repo About section
         caseStudyUrl: '',
         videoUrl: ''
       },
       'E-Commerce-Web': {
         name: 'Core Commerce Service',
         repoUrl: 'https://github.com/Adhil-cr/E-Commerce-Web',
-        liveUrl: '', // <-- add live URL here and the button appears automatically
+        liveUrl: '', // <-- add live URL here if available
         caseStudyUrl: '',
         videoUrl: ''
       },
       'Daily-python': {
         name: 'Systems & Algorithms Lab',
         repoUrl: 'https://github.com/Adhil-cr/Daily-python',
-        liveUrl: '', // <-- add live URL here and the button appears automatically
+        liveUrl: '', // <-- add live URL here if available
         caseStudyUrl: '',
         videoUrl: ''
       },
       'BroComplaint': {
         name: 'BroComplaint Portal',
         repoUrl: 'https://github.com/Adhil-cr/BroComplaint',
-        liveUrl: '', // <-- add live URL here and the button appears automatically
+        liveUrl: 'https://brototype-issue-tracker.lovable.app', // <-- Live link from GitHub repo About section
         caseStudyUrl: '',
         videoUrl: ''
       }
@@ -856,17 +891,22 @@
     };
 
     // ==========================================================================
-    // 3. MINIMALIST NAME-FILL LOADER (1.2s, Once per session, Accessible)
+    // 3. AESTHETIC NEO-BRUTALIST HUD LOADER (Adhil C. R)
     // ==========================================================================
     function initNameLoader() {
       const loader = document.getElementById('name-loader');
       if (!loader) return;
 
+      const progressBar = document.getElementById('loader-progress-bar');
+      const pctCounter = document.getElementById('loader-pct-counter');
+      const microLog = document.getElementById('loader-micro-log');
+      const statusBadge = document.getElementById('loader-status-badge');
+
       const dismissLoader = () => {
         loader.classList.add('loader-hidden');
         setTimeout(() => {
           if (loader.parentNode) loader.remove();
-        }, 350);
+        }, 400);
       };
 
       // Failsafe: Hard dismissal timeout at 2.0s so content is never blocked
@@ -890,14 +930,48 @@
         }
         sessionStorage.setItem('adhil_portfolio_viewed', 'true');
       } catch (e) {
-        // In private mode or blocked storage, continue gracefully
+        // Continue gracefully if storage is restricted
       }
 
-      // Smooth completion at ~1.2s
-      setTimeout(() => {
-        clearTimeout(failsafe);
-        dismissLoader();
-      }, 1250);
+      // Smooth progress HUD sequence over ~1.2s
+      const logs = [
+        "Initializing runtime engine...",
+        "Verifying concurrency & ACID locks...",
+        "Mounting relational schemas...",
+        "Connecting GitHub pinned repositories...",
+        "SYSTEM READY // 200 OK"
+      ];
+
+      let progress = 0;
+      const duration = 1200;
+      const steps = 40;
+      const interval = duration / steps;
+      const increment = 100 / steps;
+
+      const timer = setInterval(() => {
+        progress += increment;
+        if (progress > 100) progress = 100;
+
+        const currentPct = Math.floor(progress);
+        if (progressBar) progressBar.style.width = currentPct + '%';
+        if (pctCounter) pctCounter.textContent = currentPct + '%';
+
+        const logIndex = Math.min(Math.floor((progress / 100) * logs.length), logs.length - 1);
+        if (microLog) microLog.textContent = logs[logIndex];
+
+        if (progress >= 100) {
+          clearInterval(timer);
+          if (statusBadge) {
+            statusBadge.textContent = "ONLINE";
+            statusBadge.classList.replace("text-[#FF6D1F]", "text-[#222222]");
+            statusBadge.classList.replace("bg-[#222222]", "bg-[#FF6D1F]");
+          }
+          setTimeout(() => {
+            clearTimeout(failsafe);
+            dismissLoader();
+          }, 200);
+        }
+      }, interval);
     }
     initNameLoader();
 
@@ -972,37 +1046,41 @@
           repo: 'seating-system',
           name: 'ExamCell Automation System',
           link: 'https://github.com/Adhil-cr/seating-system',
+          homepage: 'https://benchmap.in/',
           description: 'High-integrity examination hall and matrix seating engine in Django & PostgreSQL that normalizes enrollments and generates deterministic seating plans.',
           language: 'Python / Django',
           languageColor: '#3572A5',
           tech: ['Python 3.12', 'Django', 'PostgreSQL', 'Pandas']
         },
         {
+          repo: 'BroComplaint',
+          name: 'BroComplaint Portal',
+          link: 'https://github.com/Adhil-cr/BroComplaint',
+          homepage: 'https://brototype-issue-tracker.lovable.app',
+          description: 'Student grievance and administrative tracking portal engineered with TypeScript, modular routing, and role-based access control.',
+          language: 'TypeScript',
+          languageColor: '#3178c6',
+          tech: ['TypeScript', 'Fullstack', 'RBAC', 'REST']
+        },
+        {
           repo: 'E-Commerce-Web',
           name: 'Core Commerce Service',
           link: 'https://github.com/Adhil-cr/E-Commerce-Web',
+          homepage: '',
           description: 'Transactional Django commerce backend enforcing ACID database transactions with row-level locking (SELECT FOR UPDATE) to eliminate checkout race conditions.',
-          language: 'Python / Django',
-          languageColor: '#3572A5',
+          language: 'HTML / Django',
+          languageColor: '#e34c26',
           tech: ['Python 3.12', 'Django REST', 'PostgreSQL', 'ACID Locks']
         },
         {
           repo: 'Daily-python',
           name: 'Systems & Algorithms Lab',
           link: 'https://github.com/Adhil-cr/Daily-python',
+          homepage: '',
           description: 'Comprehensive 9-tier software engineering repository exploring low-level C memory patterns, pointer arithmetic, and cache-conscious Python internals.',
           language: 'Python / C',
           languageColor: '#555555',
           tech: ['Python 3.12', 'C Fundamentals', 'Memory Profiling']
-        },
-        {
-          repo: 'BroComplaint',
-          name: 'BroComplaint Portal',
-          link: 'https://github.com/Adhil-cr/BroComplaint',
-          description: 'Student grievance and administrative tracking portal engineered with TypeScript, modular routing, and role-based access control.',
-          language: 'TypeScript',
-          languageColor: '#3178c6',
-          tech: ['TypeScript', 'RBAC', 'REST APIs']
         }
       ];
 
@@ -1013,14 +1091,16 @@
           
           const title = config.name || item.name || repoKey;
           const repoUrl = config.repoUrl || item.link || `https://github.com/Adhil-cr/${repoKey}`;
-          const liveUrl = (config.liveUrl && config.liveUrl.trim().length > 0) ? config.liveUrl.trim() : null;
+          const liveUrl = (config.liveUrl && config.liveUrl.trim().length > 0)
+            ? config.liveUrl.trim()
+            : (item.homepage && item.homepage.trim().length > 0 ? item.homepage.trim() : (item.liveUrl && item.liveUrl.trim().length > 0 ? item.liveUrl.trim() : null));
           const caseStudyUrl = (config.caseStudyUrl && config.caseStudyUrl.trim().length > 0) ? config.caseStudyUrl.trim() : null;
           const desc = item.description || 'Backend systems and algorithmic implementations repository.';
           const lang = item.language || 'Python';
           const langColor = item.languageColor || '#3572A5';
           const techList = item.tech || ['Python', 'Backend'];
 
-          // Dynamic Action Buttons
+          // Dynamic Action Buttons: Always Source Code; Live Demo appears automatically if homepage / liveUrl exists
           const buttons = [];
           if (repoUrl) {
             buttons.push(`
@@ -1032,7 +1112,7 @@
           }
           if (liveUrl) {
             buttons.push(`
-              <a href="${liveUrl}" target="_blank" rel="noopener noreferrer" aria-label="Open live demo for ${title}" class="min-h-[44px] font-mono text-xs font-bold text-[#222222] hover:text-[#FAF3E1] bg-[#FF6D1F] hover:bg-[#222222] px-3 py-2 border border-[#222222] brutal-shadow-sm hover:translate-x-0.5 hover:translate-y-0.5 transition-all flex items-center gap-1.5">
+              <a href="${liveUrl}" target="_blank" rel="noopener noreferrer" aria-label="Open live demo for ${title}" class="min-h-[44px] font-mono text-xs font-bold text-[#222222] hover:text-[#FAF3E1] bg-[#FF6D1F] hover:bg-[#222222] px-3.5 py-2 border border-[#222222] brutal-shadow-sm hover:translate-x-0.5 hover:translate-y-0.5 transition-all flex items-center gap-1.5">
                 <span>Live Demo</span>
                 <span aria-hidden="true">↗</span>
               </a>

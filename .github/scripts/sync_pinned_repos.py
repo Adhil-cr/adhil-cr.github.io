@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
 sync_pinned_repos.py
-Scrapes and parses the author's live pinned repositories from https://github.com/Adhil-cr
-and updates data/pinned_repos.json cleanly.
+Scrapes and parses the author's live pinned repositories from https://github.com/Adhil-cr,
+fetches repository 'homepage' (live URL from About section), and updates data/pinned_repos.json cleanly.
 Zero third-party API dependencies, completely free, reliable.
 """
 
@@ -18,12 +18,32 @@ OUTPUT_FILE = os.path.normpath(
     os.path.join(os.path.dirname(__file__), "..", "..", "data", "pinned_repos.json")
 )
 
-# Curated fallback descriptions for repos that might have an empty description on GitHub
-CURATED_DESCRIPTIONS = {
-    "Daily-python": "Comprehensive 9-tier software engineering journey from Python & C memory fundamentals to production backend architecture.",
-    "seating-system": "ExamCell – Examination Hall Seating Arrangement Automation System built with Django, PostgreSQL, SQLite, and PyInstaller.",
-    "BroComplaint": "Student grievance and complaint management portal with role-based routing and administrative tracking.",
-    "E-Commerce-Web": "Transactional Django E-Commerce backend service featuring cart workflows, soft-deletion, and row-level locking.",
+# Curated fallback titles and descriptions for repos
+CURATED_METADATA = {
+    "seating-system": {
+        "name": "ExamCell Automation System",
+        "description": "High-integrity examination hall and matrix seating engine in Django & PostgreSQL that normalizes enrollments and generates deterministic seating plans.",
+        "tech": ["Python 3.12", "Django", "PostgreSQL", "Pandas"],
+        "homepage": "https://benchmap.in/"
+    },
+    "E-Commerce-Web": {
+        "name": "Core Commerce Service",
+        "description": "Transactional Django commerce backend enforcing ACID database transactions with row-level locking (SELECT FOR UPDATE) to eliminate checkout race conditions.",
+        "tech": ["Python 3.12", "Django REST", "PostgreSQL", "ACID Transactions"],
+        "homepage": ""
+    },
+    "Daily-python": {
+        "name": "Systems & Algorithms Lab",
+        "description": "Comprehensive 9-tier software engineering repository exploring low-level C memory patterns, pointer arithmetic, and cache-conscious Python internals.",
+        "tech": ["Python 3.12", "C Programming", "Data Structures", "Memory Profiling"],
+        "homepage": ""
+    },
+    "BroComplaint": {
+        "name": "BroComplaint Portal",
+        "description": "Student grievance and administrative tracking portal engineered with TypeScript, modular routing, and role-based access control.",
+        "tech": ["TypeScript", "Fullstack", "RBAC", "REST"],
+        "homepage": "https://brototype-issue-tracker.lovable.app"
+    }
 }
 
 # Standard language color fallbacks
@@ -35,6 +55,29 @@ LANGUAGE_COLORS = {
     "C": "#555555",
     "CSS": "#563d7c",
 }
+
+
+def fetch_repo_homepage(repo_name):
+    """Fetch repo homepage (live link in About section) via GitHub REST API."""
+    api_url = f"https://api.github.com/repos/{USERNAME}/{repo_name}"
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+        "Accept": "application/vnd.github.v3+json"
+    }
+    token = os.environ.get("GITHUB_TOKEN")
+    if token:
+        headers["Authorization"] = f"Bearer {token}"
+
+    req = urllib.request.Request(api_url, headers=headers)
+    try:
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+            hp = data.get("homepage")
+            if hp and isinstance(hp, str) and hp.strip():
+                return hp.strip()
+    except Exception as e:
+        print(f"Notice: GitHub API homepage lookup for {repo_name} skipped ({e})")
+    return ""
 
 
 def fetch_pinned_repos():
@@ -67,18 +110,27 @@ def fetch_pinned_repos():
         if not repo_name:
             continue
 
+        curated = CURATED_METADATA.get(repo_name, {})
         raw_desc = re.sub(r"<.*?>", "", desc_match.group(1)).strip() if desc_match else ""
-        desc = raw_desc or CURATED_DESCRIPTIONS.get(repo_name, "Backend systems repository.")
+        desc = curated.get("description") or raw_desc or "Backend systems repository."
+        name = curated.get("name") or repo_name
+        tech = curated.get("tech") or ["Backend"]
         lang = lang_match.group(1).strip() if lang_match else "Python"
         color = color_match.group(1).strip() if color_match else LANGUAGE_COLORS.get(lang, "#FF6D1F")
         stars = int(stars_match.group(1)) if stars_match else 0
 
+        # Query live homepage / website from GitHub repo About section
+        homepage = fetch_repo_homepage(repo_name) or curated.get("homepage", "")
+
         repos.append({
             "repo": repo_name,
+            "name": name,
             "link": f"https://github.com/{USERNAME}/{repo_name}",
+            "homepage": homepage,
             "description": desc,
             "language": lang,
             "languageColor": color,
+            "tech": tech,
             "stars": stars
         })
 
@@ -99,16 +151,8 @@ def main():
 
     print(f"Found {len(pinned)} pinned repositories:")
     for r in pinned:
-        print(f"  - {r['repo']} ({r['language']})")
-
-    # Read existing
-    existing = []
-    if os.path.exists(OUTPUT_FILE):
-        try:
-            with open(OUTPUT_FILE, "r", encoding="utf-8") as f:
-                existing = json.load(f)
-        except Exception:
-            existing = []
+        hp_info = f" [Live: {r['homepage']}]" if r.get('homepage') else ""
+        print(f"  - {r['repo']} ({r['language']}){hp_info}")
 
     # Write update
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
