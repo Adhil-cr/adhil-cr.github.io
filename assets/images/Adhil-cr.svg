@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="100%" height="100%">
+  <!-- Matte Carbon Background -->
+  <rect width="1200" height="320" rx="24" fill="#111315" />
+  
+  <!-- Left Icon Mark -->
+  <g transform="translate(64, 56)">
+    <rect width="208" height="208" rx="20" fill="#FF5500" />
+    <rect x="16" y="16" width="176" height="176" rx="10" fill="#0D1117" />
+    <path d="M104 46L56 154H80L90 130H118L124 144H148L104 46ZM96 110L104 90L112 110H96Z" fill="#F8FAFC" />
+    <rect x="134" y="128" width="28" height="28" rx="3" fill="#FF5500" />
+  </g>
+
+  <!-- Primary Brand Name: ADHIL C.R -->
+  <text x="320" y="168" fill="#F8FAFC" font-family="Inter, Space Grotesk, system-ui, -apple-system, sans-serif" font-size="96" font-weight="800" letter-spacing="4">ADHIL C</text>
+  <!-- Signature Orange Square Period -->
+  <rect x="782" y="142" width="24" height="24" rx="3" fill="#FF5500" />
+  <text x="822" y="168" fill="#F8FAFC" font-family="Inter, Space Grotesk, system-ui, -apple-system, sans-serif" font-size="96" font-weight="800" letter-spacing="4">R</text>
+
+  <!-- Tagline: DEVELOP. EXPLORE. BUILD. -->
+  <text x="324" y="224" fill="#94A3B8" font-family="JetBrains Mono, Space Mono, monospace" font-size="26" font-weight="600" letter-spacing="7">DEVELOP. EXPLORE. BUILD.</text>
+</svg>

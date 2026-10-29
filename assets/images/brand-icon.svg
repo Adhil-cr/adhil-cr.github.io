@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <!-- Background Charcoal Square with Signal Orange Frame -->
+  <rect width="512" height="512" rx="48" fill="#FF5500" />
+  <rect x="36" y="36" width="440" height="440" rx="24" fill="#0D1117" />
+  
+  <!-- Geometric "A" Monogram -->
+  <path d="M256 116L140 380H194L218 322H294L308 356H362L256 116ZM236 276L256 226L276 276H236Z" fill="#F8FAFC" />
+  
+  <!-- Signature Bottom-Right Orange Terminal Node -->
+  <rect x="336" y="316" width="64" height="64" rx="6" fill="#FF5500" />
+</svg>

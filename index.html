@@ -13,7 +13,7 @@
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <!-- TODO: Replace with custom brand favicon.ico or favicon.png if desired -->
+  <link rel="apple-touch-icon" href="assets/images/brand-icon.svg">
 
   <!-- Open Graph / Social Sharing -->
   <meta property="og:type" content="profile">
@@ -21,8 +21,7 @@
   <meta property="og:description" content="I build backend systems where the data stays correct: clean schemas, safe transactions, and APIs that behave under load.">
   <meta property="og:url" content="https://adhil-cr.github.io/">
   <meta property="og:site_name" content="Muhammed Adhil C. R Engineering Portfolio">
-  <meta property="og:image" content="https://adhil-cr.github.io/assets/images/og-image.jpg">
-  <!-- TODO: Place a 1200x630 custom image at assets/images/og-image.jpg -->
+  <meta property="og:image" content="https://adhil-cr.github.io/assets/images/brand-logo.svg">
   <meta property="profile:first_name" content="Muhammed Adhil">
   <meta property="profile:last_name" content="C. R">
 
@@ -30,7 +29,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Muhammed Adhil C. R | Backend Developer">
   <meta name="twitter:description" content="Backend Developer specializing in Python, Django, PostgreSQL, and low-level C memory patterns.">
-  <meta name="twitter:image" content="https://adhil-cr.github.io/assets/images/og-image.jpg">
+  <meta name="twitter:image" content="https://adhil-cr.github.io/assets/images/brand-logo.svg">
 
   <!-- GEO Optimization (Kochi, Kerala, India) -->
   <meta name="geo.region" content="IN-KL">
@@ -285,15 +284,18 @@
       </div>
 
       <!-- Category Label -->
-      <div class="font-mono text-[10px] sm:text-[11px] tracking-widest text-[#FF6D1F] uppercase font-bold mb-1.5">
+      <div class="font-mono text-[10px] sm:text-[11px] tracking-widest text-[#FF6D1F] uppercase font-bold mb-2">
         // BACKEND &amp; SYSTEMS ARCHITECTURE
       </div>
 
-      <!-- Name Reveal with Blinking Cursor -->
-      <div class="space-y-1 mb-6">
-        <h2 class="font-heading text-3xl sm:text-4xl font-bold tracking-tight text-[#FAF3E1] flex items-center">
+      <!-- Name Reveal with Brand Mark & Blinking Cursor -->
+      <div class="flex items-center gap-3 sm:gap-3.5 mb-6">
+        <div class="w-10 h-10 sm:w-11 sm:h-11 flex-shrink-0 border border-[#FAF3E1]/20 bg-[#0D1117] p-0.5 shadow-[2px_2px_0px_#FF6D1F]">
+          <img src="assets/images/brand-icon.svg" alt="Brand Logo Mark" class="w-full h-full block" width="44" height="44">
+        </div>
+        <h2 class="font-heading text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-[#FAF3E1] flex items-center">
           <span class="loader-name-text">Adhil C.&nbsp;R</span>
-          <span class="loader-blink-cursor inline-block w-2.5 h-7 ml-2 bg-[#FF6D1F]"></span>
+          <span class="loader-blink-cursor inline-block w-2.5 h-6 sm:h-7 ml-2 bg-[#FF6D1F]"></span>
         </h2>
       </div>
 
@@ -318,11 +320,16 @@
     <div class="max-w-[1100px] mx-auto px-4 md:px-6 h-14 flex items-center justify-between">
       
       <!-- Identity & Status Indicator -->
-      <div class="flex items-center gap-3">
-        <a href="#" class="font-heading text-sm md:text-base font-bold tracking-tight text-[#FAF3E1] hover:text-[#FF6D1F] transition-colors whitespace-nowrap">
-          MUHAMMED ADHIL <span class="whitespace-nowrap">C.&nbsp;R</span>
+      <div class="flex items-center gap-2.5 sm:gap-3">
+        <a href="#" class="flex items-center gap-2 sm:gap-2.5 group" aria-label="Muhammed Adhil C. R - Home">
+          <div class="w-7 h-7 sm:w-8 sm:h-8 flex-shrink-0 transition-transform group-hover:scale-105 duration-150">
+            <img src="assets/images/brand-icon.svg" alt="Brand Logo Mark" class="w-full h-full block" width="32" height="32">
+          </div>
+          <span class="font-heading text-sm md:text-base font-bold tracking-tight text-[#FAF3E1] group-hover:text-[#FF6D1F] transition-colors whitespace-nowrap">
+            MUHAMMED ADHIL <span class="whitespace-nowrap">C.&nbsp;R</span>
+          </span>
         </a>
-        <div class="flex items-center gap-2 border border-[#FAF3E1]/20 px-2 py-0.5 bg-[#222222]">
+        <div class="hidden min-[380px]:flex items-center gap-2 border border-[#FAF3E1]/20 px-2 py-0.5 bg-[#222222]">
           <span class="inline-block w-2 h-2 bg-[#FF6D1F] animate-pulse"></span>
           <span class="font-mono text-[11px] font-semibold tracking-wider text-[#FF6D1F] uppercase hidden sm:inline">AVAILABLE FOR ROLES</span>
           <span class="font-mono text-[10px] font-semibold tracking-wider text-[#FF6D1F] uppercase sm:hidden">AVAILABLE</span>
@@ -823,6 +830,26 @@
         </div>
       </div>
 
+      <!-- Brand Signature Lockup in Footer -->
+      <div class="py-6 border-b border-[#FAF3E1]/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 flex-shrink-0">
+            <img src="assets/images/brand-icon.svg" alt="Adhil C. R Logo" class="w-full h-full block" width="32" height="32">
+          </div>
+          <div>
+            <div class="font-heading font-extrabold text-[#FAF3E1] tracking-wider text-sm flex items-center">
+              ADHIL C<span class="inline-block w-1.5 h-1.5 bg-[#FF6D1F] mx-1"></span>R
+            </div>
+            <div class="font-mono text-[10px] text-[#FAF3E1]/60 tracking-widest uppercase">
+              DEVELOP. EXPLORE. BUILD.
+            </div>
+          </div>
+        </div>
+        <div class="font-mono text-[11px] text-[#FAF3E1]/60">
+          Clean schemas • Safe transactions • APIs under load
+        </div>
+      </div>
+
       <!-- Bottom Meta -->
       <div class="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-[#FAF3E1]/70">
         <div>
@@ -836,7 +863,7 @@
           <a href="https://www.instagram.com/adhil_c.r/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile" class="hover:text-[#FF6D1F] transition-colors">INSTAGRAM</a>
         </div>
         <div>
-          © 2026 Muhammed Adhil C. R
+          © 2026
         </div>
       </div>
     </div>
